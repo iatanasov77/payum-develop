@@ -1,0 +1,27 @@
+# Eclipse project files
+/.buildpath
+/.project
+/.settings
+
+/.env.local
+/.env.local.php
+/.env.*.local
+/var/
+/vendor/
+
+/yarn.lock
+/composer.lock
+/symfony.lock
+/npm-debug.log
+/yarn-error.log
+/node_modules/
+/public/assets/
+/public/build/
+/public/bundles/
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
