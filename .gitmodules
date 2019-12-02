@@ -1,13 +1,12 @@
 [submodule "lib/Payum/Stripe"]
 	path = lib/Payum/Stripe
 	url = https://github.com/iatanasov77/Stripe
-	
 [submodule "lib/IA/PaymentBundle"]
 	path = lib/IA/PaymentBundle
 	url = https://github.com/iatanasov77/vs-payment-bundle
 [submodule "lib/IA/UsersBundle"]
 	path = lib/IA/UsersBundle
 	url = https://github.com/iatanasov77/vs-users-bundle
-[submodule "lib/IA/CMSBundle"]
-	path = lib/IA/CMSBundle
+[submodule "lib/IA/CmsBundle"]
+	path = lib/IA/CmsBundle
 	url = https://github.com/iatanasov77/vs-cms-bundle
