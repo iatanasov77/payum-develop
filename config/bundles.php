@@ -18,7 +18,7 @@ return [
     
     IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
     IA\CmsBundle\IACmsBundle::class => ['all' => true],
-    IA\UsersBundle\IAUsersBundle::class => ['all' => true],
+    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     IA\UsersBundle\IAUsersBundle::class => ['all' => true],
     Payum\Bundle\PayumBundle\PayumBundle::class => ['all' => true],
     
