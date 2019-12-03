@@ -15,6 +15,7 @@ return [
     Sylius\Bundle\ResourceBundle\SyliusResourceBundle::class => ['all' => true],
     winzou\Bundle\StateMachineBundle\winzouStateMachineBundle::class => ['all' => true],
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
+    Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     
     IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
     IA\CmsBundle\IACmsBundle::class => ['all' => true],

@@ -1,0 +1,9 @@
+framework:
+    assets:
+      json_manifest_path: '%kernel.project_dir%/public/build/%admin_template%/manifest.json'
+
+webpack_encore:
+    output_path: '%kernel.project_dir%/public/build/%admin_template%'
+    builds:
+        admin: '%kernel.project_dir%/public/build/admin'
+        website: '%kernel.project_dir%/public/build/website'

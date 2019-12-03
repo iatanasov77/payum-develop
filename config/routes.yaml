@@ -15,4 +15,7 @@ ia_payment:
     resource: "@IAPaymentBundle/Resources/config/routing.yml"
     prefix:   /payment
 
-    
+app_logout:
+    path: /logout
+    controller: App\Controller\AuthController::logout
+        
