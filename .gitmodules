@@ -1,6 +1,6 @@
 [submodule "lib/Payum/Stripe"]
 	path = lib/Payum/Stripe
-	url = https://github.com/iatanasov77/Stripe
+	url = https://github.com/iatanasov77/Stripe.git
 [submodule "lib/IA/PaymentBundle"]
 	path = lib/IA/PaymentBundle
 	url = https://github.com/iatanasov77/vs-payment-bundle
