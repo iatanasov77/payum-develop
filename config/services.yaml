@@ -41,38 +41,6 @@ services:
         tags: ['controller.service_arguments']
         autowire: false
         
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
-    
-    app.menu_builder:
-        class: IA\CmsBundle\Component\Menu\MenuBuilder
-        arguments: ["@security.authorization_checker", "%menu.config_file%"]
-        calls:
-          - [ setContainer ]
-
-    app.main_menu:
-        autowire: false
-        class: Knp\Menu\MenuItem
-        factory: ["@app.menu_builder", mainMenu]
-        arguments: ["@knp_menu.factory"]
-        tags:
-            - { name: knp_menu.menu, alias: main }
-            
-    app.profile_menu:
-        class: Knp\Menu\MenuItem
-        factory: ["@app.menu_builder", profileMenu]
-        arguments: ["@knp_menu.factory"]
-        tags:
-            - { name: knp_menu.menu, alias: profile }
-    
-    app.breadcrumbs_menu:
-        autowire: false
-        class: Knp\Menu\MenuItem
-        factory: ["@app.menu_builder", breadcrumbsMenu]
-        arguments: ["@knp_menu.factory"]
-        tags:
-            - { name: knp_menu.menu, alias: breadcrumbs }
-              
     # Sylius Resource Form Services
     ia_web_content_thief.form.type.fieldsets:
         class: App\Form\FieldsetType

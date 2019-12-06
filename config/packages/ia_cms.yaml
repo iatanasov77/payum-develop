@@ -3,7 +3,9 @@ ia_cms:
         mainMenu:
             payment:
                 name: Payment
-                icon: icon_document_alt
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_document_alt
                 childs:
                     gateways:
                         name: Payum Gateways
@@ -13,7 +15,9 @@ ia_cms:
                         route: ia_payment_methods_index
             cms:
                 name: Static Pages
-                icon: icon_genius
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
                 childs:
                     list:
                         name: List Pages
@@ -21,4 +25,27 @@ ia_cms:
                     create:
                         name: Create New Page
                         route: ia_cms_pages_create
+                        display: false
+                    update:
+                        name: Edit Page
+                        route: ia_cms_pages_update
+                        routeParameters:
+                          id: int
+                        display: false
+        profileMenu:
+            profile:
+                name: "My Profile"
+                route: ia_users_profile_show
+                attributes:
+                    iconClass: "fas fa-user mr-2"
+            logout:
+                name: "Log Out"
+                route: app_logout
+                attributes:
+                    iconClass: "fas fa-power-off mr-2"
+            documentation:
+                name: "Documentation"
+                uri: "javascript:;"
+                attributes:
+                    iconClass: "fas fa-cog mr-2"
                 
