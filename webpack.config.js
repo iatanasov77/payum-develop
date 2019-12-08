@@ -3,11 +3,7 @@ var Encore = require( '@symfony/webpack-encore' );
 Encore
     .setOutputPath( 'public/build/website/' )
     .setPublicPath( '/build/website' )
-    .copyFiles({
-         from: './assets/website/img',
-         to: 'img/[path][name].[hash:8].[ext]',
-     })
-    
+
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
 
@@ -18,10 +14,6 @@ Encore
     .enableVersioning(Encore.isProduction())
     .autoProvidejQuery()
 
-    .addLoader({
-        test: /jsrouting-bundle\/Resources\/public\/js\/router.js$/,
-        loader: "exports-loader?router=window.Routing"
-    })
     .enableSassLoader(function(sassOptions) {}, {
         resolveUrlLoader: true
     })

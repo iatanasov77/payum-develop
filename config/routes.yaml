@@ -2,10 +2,26 @@
 home:
     path: /
     controller: App\Controller\DefaultController::index
- 
+
+security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix:   /security/
+    
+app_login:
+    path: /login
+    controller: App\Controller\AuthController::login
+    
+app_logout:
+    path: /logout
+    controller: App\Controller\AuthController::logout
+
 ia_users:
     resource: "@IAUsersBundle/Resources/config/routing/user_management.yml"
     prefix:   /users_bundle/
+
+ia_users_subscription:
+    resource: "@IAUsersBundle/Resources/config/routing/subscription.yml"
+    prefix:   /users_bundle/subscription/
  
 ia_cms:
     resource: "@IACmsBundle/Resources/config/routing.yml"
@@ -15,7 +31,4 @@ ia_payment:
     resource: "@IAPaymentBundle/Resources/config/routing.yml"
     prefix:   /payment
 
-app_logout:
-    path: /logout
-    controller: App\Controller\AuthController::logout
         
