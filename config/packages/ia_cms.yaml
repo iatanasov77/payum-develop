@@ -13,7 +13,7 @@ ia_cms:
                     methods:
                         name: Payment Methods
                         route: ia_payment_methods_index
-            cms:
+            cms_pages:
                 name: Static Pages
                 uri: "javascript:;"
                 attributes:
@@ -29,6 +29,26 @@ ia_cms:
                     update:
                         name: Edit Page
                         route: ia_cms_pages_update
+                        routeParameters:
+                          id: int
+                        display: false
+                        
+            cms_taxonomy:
+                name: Taxonomy
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                childs:
+                    list_vocabularies:
+                        name: Vocabularies
+                        route: ia_cms_taxonomy_vocabularies_index
+                    create_vocabulary:
+                        name: Create Vocabulary
+                        route: ia_cms_taxonomy_vocabularies_create
+                        display: true
+                    update_vocabulary:
+                        name: Edit Vocabulary
+                        route: ia_cms_taxonomy_vocabularies_update
                         routeParameters:
                           id: int
                         display: false

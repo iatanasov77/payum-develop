@@ -1,10 +1,5 @@
 $( function()
 {
-	$('.termsContainer').duplicateFields({
-        btnRemoveSelector: ".btnRemoveTerm",
-        btnAddSelector:    ".btnAddTerm"
-    });
-	
 	jQuery("#btnDelete").on("click", function (e) {
 	    var link = this;
 	    e.preventDefault();

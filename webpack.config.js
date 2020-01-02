@@ -55,9 +55,16 @@ Encore
          from: './assets/admin/images',
          to: 'images/[path][name].[ext]',
      })
+     .copyFiles({
+         from: './node_modules/bootstrap-sass/assets/fonts/bootstrap',
+         to: 'fonts/bootstrap/[name].[ext]',
+     })
     
     .addEntry( 'app', './assets/admin/js/app.js' )
     .addStyleEntry( 'css/global', './assets/admin/css/main.css' )
+    
+    .addEntry('profile', './assets/admin/js/pages/profile.js')
+    .addEntry('taxonomy-vocabolary-edit', './assets/admin/js/pages/taxonomy-vocabolary-edit.js')
     
     .autoProvidejQuery()
     .enableSassLoader(function(sassOptions) {}, {
@@ -72,9 +79,6 @@ Encore
     .enableSingleRuntimeChunk()
     .enableVersioning(Encore.isProduction())
     .enableSourceMaps( !Encore.isProduction() )
-    
-    .addEntry('profile', './assets/admin/js/pages/profile.js')
- 
 ;
 
 // build the second configuration

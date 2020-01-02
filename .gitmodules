@@ -10,3 +10,6 @@
 [submodule "lib/IA/CmsBundle"]
 	path = lib/IA/CmsBundle
 	url = https://github.com/iatanasov77/vs-cms-bundle
+[submodule "lib/Wasinger/BundleAssetProviderBundle"]
+	path = lib/Wasinger/BundleAssetProviderBundle
+	url = https://github.com/iatanasov77/bundle-asset-provider-bundle.git
