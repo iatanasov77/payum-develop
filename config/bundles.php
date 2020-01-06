@@ -18,6 +18,7 @@ return [
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     
+    IA\ApplicationCoreBundle\IAApplicationCoreBundle::class => ['all' => true],
     IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
     IA\CmsBundle\IACmsBundle::class => ['all' => true],
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],

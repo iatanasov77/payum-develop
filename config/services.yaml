@@ -15,7 +15,6 @@ parameters:
     menu.config_file: "%kernel.root_dir%/../config/packages/ia_cms.yaml"
     
 services:
-   
 
     # default configuration for services in *this* file
     _defaults:
