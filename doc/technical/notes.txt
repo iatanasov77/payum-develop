@@ -1,0 +1,9 @@
+
+1. I should create a log file for my bundles to log errors and warnings espetialy for services
+
+2. How to disable or override sirvices:
+    https://symfony.com/doc/current/bundles/override.html#services-configuration
+    
+2. Hierarchical Roles: 
+    https://symfony.com/doc/current/security.html#hierarchical-roles
+    

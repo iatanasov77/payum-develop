@@ -18,6 +18,7 @@
         "symfony/validator": "^4.2",
         "symfony/webpack-encore-bundle": "^1.6",
         "symfony/yaml": "^4.2",
+        "twig/extensions": "^1.5",
         
 		"iatanasov77/vs-core-bundle": "dev-develop",
 		"iatanasov77/vs-users-bundle": "dev-develop",
@@ -26,7 +27,8 @@
     },
     "require-dev": {
     	"symfony/debug-bundle": "^4.2",
-        "symfony/maker-bundle": "^1.13"
+        "symfony/maker-bundle": "^1.13",
+        "symplify/changelog-linker": "^7.3@dev"
     },
 	"repositories": [
 		{
