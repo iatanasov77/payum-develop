@@ -22,10 +22,6 @@ ia_users:
 ia_users_subscription:
     resource: "@IAUsersBundle/Resources/config/routing/subscription.yml"
     prefix:   /users_bundle/subscription/
- 
-ia_cms:
-    resource: "@IACmsBundle/Resources/config/routing.yml"
-    prefix:   /cms
     
 ia_payment:
     resource: "@IAPaymentBundle/Resources/config/routing.yml"

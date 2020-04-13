@@ -15,12 +15,16 @@ return [
     JMS\SerializerBundle\JMSSerializerBundle::class => ['all' => true],
     Sylius\Bundle\ResourceBundle\SyliusResourceBundle::class => ['all' => true],
     winzou\Bundle\StateMachineBundle\winzouStateMachineBundle::class => ['all' => true],
-    Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     
     IA\ApplicationCoreBundle\IAApplicationCoreBundle::class => ['all' => true],
     IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
+    
+    // IA Cms
     IA\CmsBundle\IACmsBundle::class => ['all' => true],
+    WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle::class => ['all' => true],
+    Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
+    
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     IA\UsersBundle\IAUsersBundle::class => ['all' => true],
     Payum\Bundle\PayumBundle\PayumBundle::class => ['all' => true],

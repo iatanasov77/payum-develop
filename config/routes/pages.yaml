@@ -1,0 +1,16 @@
+ia_cms_pages:
+    resource: "@IACmsBundle/Resources/config/routing/pages.yml"
+    prefix:   /
+
+vsorg_pages_page_clone:
+    path: /pages/{id}/clone
+    controller: App\Controller\Admin\PagesExtController::clonePage
+
+vsorg_pages_tree:
+    path: /json/pages/tree
+    controller: App\Controller\Admin\PagesExtController::tree
+        
+vsorg_pages_category_tree:
+    path: /json/page_categories/tree
+    controller: App\Controller\Admin\PagesCategoryController::tree
+    
