@@ -7,48 +7,8 @@ sylius_resource:
         ia_users.users:
             driver: doctrine/orm
             classes:
-                model:      IA\UsersBundle\Entity\User
+                model:      App\Entity\UserManagement\User
                 interface:  Sylius\Component\Resource\Model\ResourceInterface
-                controller: IA\UsersBundle\Controller\UsersCrudController
-                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository
-                      
-        ia_users.packages:
-            driver: doctrine/orm
-            classes:
-                model:      IA\UsersBundle\Entity\Package
-                interface:  Sylius\Component\Resource\Model\ResourceInterface
-                controller: IA\UsersBundle\Controller\MembershipPackagesController
-                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository
-                
-        ia_users.plans:
-            driver: doctrine/orm
-            classes:
-                model:      IA\UsersBundle\Entity\Plan
-                interface:  Sylius\Component\Resource\Model\ResourceInterface
-                controller: IA\UsersBundle\Controller\MembershipPlansController
-                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository
-        
-        ia_users.packageplans:
-            driver: doctrine/orm
-            classes:
-                model:      IA\UsersBundle\Entity\PackagePlan
-                interface:  Sylius\Component\Resource\Model\ResourceInterface
-                controller: IA\UsersBundle\Controller\MembershipPackagePlansController
-                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository
-                        
-        ia_cms.pages:
-            driver: doctrine/orm
-            classes:
-                model:      IA\CmsBundle\Entity\Page
-                interface:  Sylius\Component\Resource\Model\ResourceInterface
-                controller: IA\CmsBundle\Controller\PagesController
-                repository: IA\CmsBundle\Entity\Repository\PagesRepository
-                
-        ia_cms.taxonomy_vocabularies:
-            driver: doctrine/orm
-            classes:
-                model:      IA\CmsBundle\Entity\TaxonomyVocabulary
-                interface:  Sylius\Component\Resource\Model\ResourceInterface
-                controller: IA\CmsBundle\Controller\TaxonomyVocabulariesController
-                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository
+                controller: VS\UsersBundle\Controller\UsersCrudController
+                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository      
                 

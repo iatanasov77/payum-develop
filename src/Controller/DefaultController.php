@@ -7,6 +7,6 @@ class DefaultController extends Controller
 {
     public function index()
     {
-        return new Response();
+        return $this->render( 'pages/home.html.twig' );
     }
 }

@@ -1,0 +1,7 @@
+ia_cms:
+    resources:
+        pages:
+            classes:
+                model: App\Entity\Cms\Page
+                
+   

@@ -16,3 +16,6 @@
 [submodule "lib/VS/UsersBundle"]
 	path = lib/VS/UsersBundle
 	url = https://github.com/iatanasov77/vs-users-bundle
+[submodule "lib/VS/ApplicationBundle"]
+	path = lib/VS/ApplicationBundle
+	url = https://github.com/iatanasov77/vs-application-bundle.git

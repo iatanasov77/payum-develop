@@ -1,0 +1,4 @@
+app_settings:
+    resource: "@VSApplicationBundle/Resources/config/routing/settings.yaml"
+    prefix:   /
+    

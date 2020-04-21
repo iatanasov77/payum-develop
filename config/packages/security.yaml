@@ -1,13 +1,13 @@
 security:
     encoders:
-        IA\UsersBundle\Entity\User:
+        App\Entity\UserManagement\User:
             algorithm: argon2i
             
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         default_provider:
             entity:
-                class: IA\UsersBundle\Entity\User
+                class: App\Entity\UserManagement\User
                 property: username
     firewalls:
         main:
@@ -32,4 +32,4 @@ security:
       - { path: ^/resetting/send-email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/resetting/request, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/, roles: ROLE_USER }
+      - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }

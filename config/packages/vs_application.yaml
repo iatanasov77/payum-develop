@@ -1,0 +1,56 @@
+vs_application:
+    resources:
+        settings:
+            classes:
+                model: App\Entity\Settings
+        taxonomy:
+            classes:
+                model: App\Entity\Taxonomy
+                
+    menu:
+        devMenu:
+            application:
+                name: Application Core
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_document_alt
+                childs:
+                    settings:
+                        name: General Settings
+                        route: vs_application_settings_index
+                    taxonomy:
+                        name: Taxonomy
+                        route: vs_application_taxonomy_index
+        mainMenu:
+            application:
+                name: Application Core
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_document_alt
+                childs:
+                    settings:
+                        name: General Settings
+                        route: vs_application_settings_index
+                    taxonomy:
+                        name: Taxonomy
+                        route: vs_application_taxonomy_index
+
+                        
+        profileMenu:
+            profile:
+                name: "My Profile"
+                route: ia_users_profile_show
+                attributes:
+                    iconClass: "fas fa-user mr-2"
+            logout:
+                name: "Log Out"
+                route: app_logout
+                attributes:
+                    iconClass: "fas fa-power-off mr-2"
+            documentation:
+                name: "Documentation"
+                uri: "javascript:;"
+                attributes:
+                    iconClass: "fas fa-cog mr-2"
+                
+     

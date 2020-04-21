@@ -1,8 +1,6 @@
-# This file is the entry point to configure your own services.
-# Files in the packages/ subdirectory configure your dependencies.
+imports:
+    - { resource: services/developement.yaml }
 
-# Put parameters here that don't need to change on each machine where the app is deployed
-# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     lang: 'en'
     locale: 'en_US'
@@ -10,9 +8,7 @@ parameters:
     mailer_user: 'wct@example.com'
     admin_template: 'admin'
     website_template: 'website'
-    
     yaml.parser.class: Symfony\Component\Yaml\Parser
-    menu.config_file: "%kernel.root_dir%/../config/packages/ia_cms.yaml"
     
 services:
 
@@ -82,4 +78,9 @@ services:
         arguments: ["@payum"]
         #arguments: ["@doctrine.orm.entity_manager"]
 
+    vs_application.form.type.settings:
+        class: VS\ApplicationBundle\Form\GeneralSettingsForm
+        tags:
+            - { name: form.type }
+        arguments: ['%vs_application.model.settings.class%', $pageClass: '%vs_cms.model.pages.class%']
         

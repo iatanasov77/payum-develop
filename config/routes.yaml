@@ -16,12 +16,8 @@ app_logout:
     controller: App\Controller\AuthController::logout
 
 ia_users:
-    resource: "@IAUsersBundle/Resources/config/routing/user_management.yml"
+    resource: "@VSUsersBundle/Resources/config/routing/user_management.yml"
     prefix:   /users_bundle/
-
-ia_users_subscription:
-    resource: "@IAUsersBundle/Resources/config/routing/subscription.yml"
-    prefix:   /users_bundle/subscription/
     
 ia_payment:
     resource: "@IAPaymentBundle/Resources/config/routing.yml"

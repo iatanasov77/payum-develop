@@ -1,3 +1,3 @@
-ia_cms_pages:
-    resource: "@IACmsBundle/Resources/config/routing/taxonomy.yml"
+app_taxonomy:
+    resource: "@VSApplicationBundle/Resources/config/routing/taxonomy.yaml"
     prefix:   /

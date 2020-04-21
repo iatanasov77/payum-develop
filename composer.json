@@ -20,20 +20,21 @@
         "symfony/yaml": "^4.2",
         "twig/extensions": "^1.5",
         
-		"iatanasov77/vs-core-bundle": "dev-develop",
-		"iatanasov77/vs-users-bundle": "dev-develop",
+		"vankosoft/application-bundle": "dev-develop",
+		"vankosoft/users-bundle": "dev-develop",
        	"iatanasov77/vs-cms-bundle": "dev-develop",
        	"iatanasov77/vs-payment-bundle": "dev-develop"
     },
     "require-dev": {
+    	"monolog/monolog": "^2.0",
     	"symfony/debug-bundle": "^4.2",
         "symfony/maker-bundle": "^1.13",
-        "symplify/changelog-linker": "^7.3@dev"
+        "symplify/changelog-linker": "^7.2"
     },
 	"repositories": [
 		{
             "type": "git",
-            "url": "https://github.com/iatanasov77/vs-core-bundle.git"
+            "url": "https://github.com/iatanasov77/vs-application-bundle.git"
         },
 		{
             "type": "git",
@@ -51,15 +52,18 @@
     "config": {
         "process-timeout":      600,
         "preferred-install":    "dist",
-        "github-protocols":     ["https"]
+        "github-protocols":     ["https"],
+        "platform": {
+            "ext-mongo": "1.6.16"
+        }
     },
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "IA\\ApplicationCoreBundle\\": "lib/IA/ApplicationCoreBundle/",
+            "VS\\ApplicationBundle\\": "lib/VS/ApplicationBundle/",
             "IA\\CmsBundle\\": "lib/IA/CmsBundle/",
             "IA\\PaymentBundle\\": "lib/IA/PaymentBundle/",
-            "IA\\UsersBundle\\": "lib/IA/UsersBundle/",
+            "VS\\UsersBundle\\": "lib/VS/UsersBundle/",
             "Payum\\Stripe\\": "lib/Payum/Stripe/"
         }
     },
@@ -82,6 +86,5 @@
         "post-update-cmd": [
             "@auto-scripts"
         ]
-    },
-    "minimum-stability" : "dev"
+    }
 }

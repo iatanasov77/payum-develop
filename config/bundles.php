@@ -16,7 +16,8 @@ return [
     winzou\Bundle\StateMachineBundle\winzouStateMachineBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     
-    IA\ApplicationCoreBundle\IAApplicationCoreBundle::class => ['all' => true],
+    VS\ApplicationBundle\VSApplicationBundle::class => ['all' => true],
+    //IA\ApplicationCoreBundle\IAApplicationCoreBundle::class => ['all' => true],
     IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
     
     // IA Cms
@@ -25,7 +26,7 @@ return [
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
-    IA\UsersBundle\IAUsersBundle::class => ['all' => true],
+    VS\UsersBundle\VSUsersBundle::class => ['all' => true],
     Payum\Bundle\PayumBundle\PayumBundle::class => ['all' => true],
     
 ];
