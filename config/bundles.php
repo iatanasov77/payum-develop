@@ -17,16 +17,18 @@ return [
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     
     VS\ApplicationBundle\VSApplicationBundle::class => ['all' => true],
-    //IA\ApplicationCoreBundle\IAApplicationCoreBundle::class => ['all' => true],
-    IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
-    
-    // IA Cms
-    IA\CmsBundle\IACmsBundle::class => ['all' => true],
-    WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle::class => ['all' => true],
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     
-    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
+    // VS Cms
+    VS\CmsBundle\VSCmsBundle::class => ['all' => true],
+    WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle::class => ['all' => true],
+    
+    // VS Users
     VS\UsersBundle\VSUsersBundle::class => ['all' => true],
+    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
+    
+    // VS Payment and Subscriptions
+    IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
     Payum\Bundle\PayumBundle\PayumBundle::class => ['all' => true],
     
 ];

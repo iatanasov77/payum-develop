@@ -22,8 +22,9 @@
         
 		"vankosoft/application-bundle": "dev-develop",
 		"vankosoft/users-bundle": "dev-develop",
-       	"iatanasov77/vs-cms-bundle": "dev-develop",
-       	"iatanasov77/vs-payment-bundle": "dev-develop"
+       	"vankosoft/cms-bundle": "dev-develop",
+       	"iatanasov77/vs-payment-bundle": "dev-develop",
+       	"iatanasov77/vs-users-subscriptions-bundle": "dev-develop"
     },
     "require-dev": {
     	"monolog/monolog": "^2.0",
@@ -39,6 +40,10 @@
 		{
             "type": "git",
             "url": "https://github.com/iatanasov77/vs-users-bundle.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/iatanasov77/vs-users-subscriptions-bundle.git"
         },
         {
             "type": "git",

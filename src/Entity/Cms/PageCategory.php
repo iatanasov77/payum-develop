@@ -2,13 +2,13 @@
 
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
-use IA\CmsBundle\Model\PageCategory as BasePageCategory;
+use VS\CmsBundle\Model\PageCategory as BasePageCategory;
 
 /**
  * @Gedmo\TranslationEntity(class="App\Entity\Translation")
  * @Gedmo\Tree(type="nested")
  * @ORM\Table(name="IACMS_PageCategories")
- * @ORM\Entity(repositoryClass="IA\CmsBundle\Repository\PageCategoryRepository")
+ * @ORM\Entity(repositoryClass="VS\CmsBundle\Repository\PageCategoryRepository")
  */
 class PageCategory extends BasePageCategory
 {

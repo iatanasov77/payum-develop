@@ -2,7 +2,7 @@
 
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
-use IA\CmsBundle\Model\Page as BasePage;
+use VS\CmsBundle\Model\Page as BasePage;
 
 /**
  * Page
