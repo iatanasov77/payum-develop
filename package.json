@@ -13,7 +13,7 @@
         "bootstrap-gtreetable": "https://github.com/gilek/bootstrap-gtreetable.git",
         "bootstrap-sass": "^3.4.1",
         "core-js": "^3.0.0",
-        "jquery": "^3.4.1",
+        "jquery": "3.4.1",
         "jquery-ui-dist": "^1.12.1",
         "jquery.nicescroll": "^3.7.6",
         "popper": "^1.0.1",

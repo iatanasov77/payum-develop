@@ -7,5 +7,5 @@ require( '../vendor/bootstrap/js/bootstrap.bundle.js' );
 require( '../vendor/slimscroll/jquery.slimscroll.js' );
 require( '../libs/js/main-js.js' );
 
-require( 'jquery-easyui/css/easyui.css' );
-require( 'jquery-easyui/js/jquery.easyui.min.js' );
+//require( 'jquery-easyui/css/easyui.css' );
+//require( 'jquery-easyui/js/jquery.easyui.min.js' );

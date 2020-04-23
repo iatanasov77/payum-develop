@@ -8,7 +8,7 @@ use VS\CmsBundle\Model\PageCategory as BasePageCategory;
  * @Gedmo\TranslationEntity(class="App\Entity\Translation")
  * @Gedmo\Tree(type="nested")
  * @ORM\Table(name="IACMS_PageCategories")
- * @ORM\Entity(repositoryClass="VS\CmsBundle\Repository\PageCategoryRepository")
+ * @ORM\Entity
  */
 class PageCategory extends BasePageCategory
 {

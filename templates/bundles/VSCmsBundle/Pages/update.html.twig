@@ -1,4 +1,4 @@
-{% extends "admin/layout.html.twig" %}
+{% extends "layout.html.twig" %}
 
 {% block title %}{{ parent() }} :: Edit Page{% endblock %}
 {% block pageTitle %}<i class="icon_genius"></i> Edit Page{% endblock %}
@@ -21,7 +21,7 @@
                     <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
                     <div class="page-breadcrumb">
                     	<nav aria-label="breadcrumb">
-                            {{ knp_menu_render( 'breadcrumbs', {'template': 'admin/menu/breadcrumb.html.twig'} ) }}
+                            {{ knp_menu_render( 'breadcrumbs', {'template': 'menu/breadcrumb.html.twig'} ) }}
                         </nav>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                                 {{ form_widget(form.locale, {'attr': {'class': 'form-control'}}) }}
                             </div>
                             
-	                        {% set tree_data_options = "url:'" ~ path( 'vsorg_pages_category_tree' ) ~ "', required:true" %}
+	                        {% set tree_data_options = "url:'" ~ path( 'vs_cms_pages_tree' ) ~ "', required:true" %}
                             <div class="form-group">
                                 {{ form_label(form.category, null, {
                                     'label_attr': {'class': 'col-form-label'}

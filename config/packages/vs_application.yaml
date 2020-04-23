@@ -9,10 +9,11 @@ vs_application:
                 
     menu:
         devMenu:
-            application:
-                name: Application Core
+            appBundle:
+                name: Symfony Application Bundle
                 uri: "javascript:;"
                 attributes:
+                    id: appBundle
                     iconClass: icon_document_alt
                 childs:
                     settings:
@@ -21,6 +22,20 @@ vs_application:
                     taxonomy:
                         name: Taxonomy
                         route: vs_application_taxonomy_index
+            cmsBundle:
+                name: Symfony Cms Bundle
+                uri: "javascript:;"
+                attributes:
+                    id: cmsBundle
+                    iconClass: icon_document_alt
+                childs:
+                    pages:
+                        name: Pages
+                        route: vs_cms_pages_index
+                    categories:
+                        name: Categories
+                        route: vs_cms_page_categories_index
+                        
         mainMenu:
             application:
                 name: Application Core

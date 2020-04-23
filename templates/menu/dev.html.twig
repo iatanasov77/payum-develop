@@ -5,15 +5,15 @@
     <div id="dashboardMenu">
         {% for parentItem in item.children %}
         	<div class="card">
-                <div class="card-header" id="headingSeven">
+                <div class="card-header" id="heading-{{ parentItem.attributes.id }}">
                     <h5 class="mb-0">
-                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#{{ parentItem.attributes.id }}" aria-expanded="false" aria-controls="{{ parentItem.attributes.id }}">
                          <span class="fas mr-3 fa-angle-down"></span>
                          {{ parentItem.name }}
                        </button>
                       </h5>
                 </div>
-                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#dashboardMenu" style="">
+                <div id="{{ parentItem.attributes.id }}" class="collapse" aria-labelledby="heading-{{ parentItem.attributes.id }}" data-parent="#dashboardMenu" style="">
                     <div class="card-body">
                         {% for childItem in parentItem.children %}
                             {% if( childItem.displayed ) %}

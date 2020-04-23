@@ -1,0 +1,4 @@
+monolog:
+    handlers:
+        file_log:
+            level: debug

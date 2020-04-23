@@ -21,7 +21,7 @@ class Developement extends MenuBuilder
             throw new \Exception( '"devMenu" node must be provided at "vs_application.yaml" config file.' );
         }
         $this->build( $menu, $this->menuConfig['devMenu'] );
-        
+        //var_dump($this->menuConfig['devMenu']['cmsBundle']['childs']); die;
         return $menu;
     }
 }

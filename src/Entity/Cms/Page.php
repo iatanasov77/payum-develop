@@ -9,7 +9,7 @@ use VS\CmsBundle\Model\Page as BasePage;
  *
  * @Gedmo\TranslationEntity(class="App\Entity\Translation")
  * @ORM\Table(name="IACMS_Pages")
- * @ORM\Entity(repositoryClass="IA\CmsBundle\Repository\PagesRepository")
+ * @ORM\Entity
  */
 class Page extends BasePage
 {

@@ -18,7 +18,8 @@
         <span class="custom-control-label">Maintenance Mode</span>
     </label>
 
-    {% set tree_data_options = "url:'" ~ path( 'ia_cms_pages_tree' ) ~ "', required:true" %}
+    {% set tree_data_options = "url:'" ~ path( 'vs_cms_pages_tree' ) ~ "', required:true" %}
+    {{ dump(tree_data_options) }}
     <div class="form-group">
         {{ form_label(form.maintenancePage, null, {
             'label_attr': {'class': 'col-form-label'}

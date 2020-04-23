@@ -32,12 +32,16 @@ class Kernel extends BaseKernel
 
     public function getCacheDir()
     {
-        return isset( $_ENV['DIR_VAR'] ) ? $_ENV['DIR_VAR'] . '/cache' : parent::getCacheDir();
+        $dir    = isset( $_ENV['DIR_VAR'] ) ? $_ENV['DIR_VAR'] . '/cache' : parent::getCacheDir();
+        
+        return $dir;
     }
     
     public function getLogDir()
     {
-        return isset( $_ENV['DIR_VAR'] ) ? $_ENV['DIR_VAR'] . '/log' : parent::getLogDir();
+        $dir = isset( $_ENV['DIR_VAR'] ) ? $_ENV['DIR_VAR'] . '/log' : parent::getLogDir();
+        
+        return $dir;
     }
     
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void

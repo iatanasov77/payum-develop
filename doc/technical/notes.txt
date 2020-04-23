@@ -7,4 +7,9 @@
 2. Hierarchical Roles: 
     https://symfony.com/doc/current/security.html#hierarchical-roles
 
+3. Composer missing extensions fix in the '/vendor/composer/platform_check.php':
+    if ( ( $key = array_search( 'mongo', $missingExtensions ) ) !== false ) {
+        unset( $missingExtensions[$key] );
+    }
+    
     
