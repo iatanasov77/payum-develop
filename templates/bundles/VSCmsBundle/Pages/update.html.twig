@@ -49,13 +49,9 @@
 			                </div>
 			            {% endif %}
 			            
-			            {% if(item.id) %}
-			                {% set method = "PUT" %}
-			            {% else %}
-			                {% set method = "POST" %}
-			            {% endif %}
+			            {% if(item.id) %}{% set method = "PUT" %}{% else %}{% set method = "POST" %}{% endif %}
 	                	{{ form_start(form, { 'attr': {'class': 'form-horizontal '}, 'method': method }) }}
-	                        {{ form_widget(form._token) }}    
+	                        {{ form_widget(form._token) }}
                             
                             <label class="custom-control custom-checkbox">  
                                 <input type="checkbox" id="page_form_enabled" name="page_form[enabled]" 
@@ -73,17 +69,18 @@
                                 {{ form_widget(form.locale, {'attr': {'class': 'form-control'}}) }}
                             </div>
                             
-	                        {% set tree_data_options = "url:'" ~ path( 'vs_cms_pages_tree' ) ~ "', required:true" %}
+                            {% if(item.id) %}{% set taxonId = item.category.taxon.id %}{% else %}{% set taxonId = '' %}{% endif %}
+	                        {% set tree_data_options = "url:'" ~ path( 'vs_application_taxonomy_taxons_easyui_combotree', {'id': taxonomyId} ) ~ "', required:true" %}
                             <div class="form-group">
-                                {{ form_label(form.category, null, {
+                                {{ form_label(form.category_taxon, null, {
                                     'label_attr': {'class': 'col-form-label'}
                                     }) 
                                 }}
-                                {{ form_widget(form.category, {
+                                {{ form_widget(form.category_taxon, {
                                     'attr': {
                                         'class': 'easyui-combotree',
                                         'data-options': tree_data_options,
-                                        'data-value': item.id
+                                        'data-value': taxonId
                                     }
                                 }) }}
                             </div>
@@ -123,10 +120,15 @@
     </div>   
 {% endblock content %}
 
-{#
+{% block head_styles %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/pages-edit' ) }}
+{% endblock %}
+
 {% block body_scripts %}
     {{ parent() }}
    
-    {{ encore_entry_script_tags( 'pages/pages-edit' ) }}
+    {{ encore_entry_script_tags( 'js/pages-edit' ) }}
 {% endblock %}
-#}
+

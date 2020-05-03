@@ -1,3 +1,7 @@
 app_taxonomy:
     resource: "@VSApplicationBundle/Resources/config/routing/taxonomy.yaml"
     prefix:   /
+    
+app_test_taxonomy:
+    path: /taxonomy-test-products
+    controller: App\Controller\TestTaxonomy\ProductController::create    

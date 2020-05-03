@@ -6,7 +6,7 @@ twig:
     globals:
         siteTitle: '%siteTitle%'
         lang: '%lang%'
-        locale: '%locale%'
+        #locale: '%locale%'
         
     form_themes: [
       'bootstrap_4_layout.html.twig',

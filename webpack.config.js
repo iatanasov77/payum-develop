@@ -16,8 +16,9 @@ Encore
     
     .addEntry( 'js/app', './assets/js/app.js' )
     
-    .addEntry('profile', './assets/js/pages/profile.js')
-    .addEntry('taxonomy-vocabolary-edit', './assets/js/pages/taxonomy-vocabolary-edit.js')
+    .addEntry('js/profile', './assets/js/pages/profile.js')
+    .addEntry('js/taxonomy', './assets/js/pages/taxonomy.js')
+    .addEntry('js/pages-edit', './assets/js/pages/pages-edit.js')
     
     .autoProvidejQuery()
     .enableSassLoader(function(sassOptions) {}, {

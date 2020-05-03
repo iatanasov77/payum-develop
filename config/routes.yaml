@@ -18,9 +18,4 @@ app_logout:
 ia_users:
     resource: "@VSUsersBundle/Resources/config/routing/user_management.yml"
     prefix:   /users_bundle/
-    
-ia_payment:
-    resource: "@IAPaymentBundle/Resources/config/routing.yml"
-    prefix:   /payment
-
         

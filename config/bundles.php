@@ -17,19 +17,24 @@ return [
     winzou\Bundle\StateMachineBundle\winzouStateMachineBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     
+    // VS Application
     VS\ApplicationBundle\VSApplicationBundle::class => ['all' => true],
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
-    
-    // VS Cms
-    VS\CmsBundle\VSCmsBundle::class => ['all' => true],
     WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle::class => ['all' => true],
+    Sylius\Bundle\ThemeBundle\SyliusThemeBundle::class => ['all' => true],
     
     // VS Users
     VS\UsersBundle\VSUsersBundle::class => ['all' => true],
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     
-    // VS Payment and Subscriptions
-    IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
-    Payum\Bundle\PayumBundle\PayumBundle::class => ['all' => true],
+    // VS Cms
+    VS\CmsBundle\VSCmsBundle::class => ['all' => true],
     
+    // VS Payment and Subscriptions
+    //IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],
+    //Payum\Bundle\PayumBundle\PayumBundle::class => ['all' => true],
+    
+    // Symfony Debugging and Profiling
+    Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
+    VasekPurchart\TracyBlueScreenBundle\TracyBlueScreenBundle::class => ['all' => true],
 ];

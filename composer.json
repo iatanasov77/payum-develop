@@ -25,12 +25,14 @@
 		"vankosoft/users-bundle": "dev-develop",
        	"vankosoft/cms-bundle": "dev-develop",
        	"iatanasov77/vs-payment-bundle": "dev-develop",
-       	"iatanasov77/vs-users-subscriptions-bundle": "dev-develop"
+       	"iatanasov77/vs-users-subscriptions-bundle": "dev-develop",
+        "vasek-purchart/tracy-blue-screen-bundle": "^3.0"
     },
     "require-dev": {
     	"symfony/debug-bundle": "^4.2",
         "symfony/maker-bundle": "^1.13",
-        "symplify/changelog-linker": "^7.2"
+        "symplify/changelog-linker": "^7.2",
+        "symfony/profiler-pack": "^1.0"
     },
 	"repositories": [
 		{
@@ -57,18 +59,15 @@
     "config": {
         "process-timeout":      600,
         "preferred-install":    "dist",
-        "github-protocols":     ["https"],
-        "platform": {
-            "ext-mongo": "1.6.16"
-        }
+        "github-protocols":     ["https"]
     },
     "autoload": {
         "psr-4": {
             "App\\": "src/",
             "VS\\ApplicationBundle\\": "lib/VS/ApplicationBundle/",
-            "IA\\CmsBundle\\": "lib/IA/CmsBundle/",
-            "IA\\PaymentBundle\\": "lib/IA/PaymentBundle/",
+            "VS\\CmsBundle\\": "lib/VS/CmsBundle/",
             "VS\\UsersBundle\\": "lib/VS/UsersBundle/",
+            "IA\\PaymentBundle\\": "lib/IA/PaymentBundle/",
             "Payum\\Stripe\\": "lib/Payum/Stripe/"
         }
     },

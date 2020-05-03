@@ -13,3 +13,11 @@
     }
     
     
+4. GREAT DEBUGGING AND LOGING WITH: nette/tracy
+    https://tracy.nette.org/en/guide
+    https://github.com/VasekPurchart/Tracy-Blue-Screen-Bundle
+
+5. EasyUi combo-tree data example:
+    https://github.com/houyongchao/jQuery-easyui/blob/master/demo/tree_data.json
+    
+        

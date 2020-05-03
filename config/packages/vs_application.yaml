@@ -1,20 +1,37 @@
 vs_application:
     resources:
+        site:
+            classes:
+                model: App\Entity\Site
         settings:
             classes:
                 model: App\Entity\Settings
         taxonomy:
             classes:
-                model: App\Entity\Taxonomy
+                model: App\Entity\Taxonomy\Taxonomy
+        taxon:
+            classes:
+                model: App\Entity\Taxonomy\Taxon
+            translation:
+                classes:
+                    model: App\Entity\Taxonomy\TaxonTranslation
                 
     menu:
         devMenu:
+            devTests:
+                name: Developement Tests
+                uri: "javascript:;"
+                attributes:
+                    id: devTests
+                childs:
+                    taxonomy_test_products:
+                        name: Test Taxonomy with Product Categorization
+                        route: app_test_taxonomy
             appBundle:
                 name: Symfony Application Bundle
                 uri: "javascript:;"
                 attributes:
                     id: appBundle
-                    iconClass: icon_document_alt
                 childs:
                     settings:
                         name: General Settings
@@ -27,7 +44,6 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     id: cmsBundle
-                    iconClass: icon_document_alt
                 childs:
                     pages:
                         name: Pages

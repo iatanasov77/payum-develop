@@ -13,12 +13,5 @@ use VS\CmsBundle\Model\Page as BasePage;
  */
 class Page extends BasePage
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    protected $id;
+    
 }

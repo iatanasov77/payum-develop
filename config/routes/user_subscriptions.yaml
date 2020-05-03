@@ -1,0 +1,3 @@
+#ia_payment:
+#    resource: "@IAPaymentBundle/Resources/config/routing.yml"
+#    prefix:   /payment
