@@ -9,7 +9,4 @@ use VS\ApplicationBundle\Model\Settings as BaseSettings;
  */
 class Settings extends BaseSettings
 {
-    const SITE_ADMIN    = 3;    // admin.vankosoft.org
-    const SITE_BLOG     = 4;    // blog.vankosoft.org
-    const SITE_MAIN     = 5;    // vankosoft.org
 }

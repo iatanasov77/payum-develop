@@ -19,7 +19,6 @@
     </label>
 
     {% set tree_data_options = "url:'" ~ path( 'vs_cms_pages_tree' ) ~ "', required:true" %}
-    {{ dump(tree_data_options) }}
     <div class="form-group">
         {{ form_label(form.maintenancePage, null, {
             'label_attr': {'class': 'col-form-label'}
@@ -36,6 +35,14 @@
         }) }}
     </div>
 
+     <div class="form-group">
+        {{ form_label(form.theme, null, {
+            'label_attr': {'class': 'col-form-label'}
+            }) 
+        }}
+        {{ form_widget(form.theme, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    
     <div class="form-group">
         {{ form_label(form.languages, null, {
             'label_attr': {'class': 'col-form-label'}
