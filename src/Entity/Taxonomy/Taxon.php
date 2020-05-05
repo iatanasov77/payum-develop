@@ -7,7 +7,7 @@ use Sylius\Component\Taxonomy\Model\TaxonTranslationInterface;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="APP_Taxons")
+ * @ORM\Table(name="VSAPP_Taxons")
  */
 class Taxon extends BaseTaxon
 {    

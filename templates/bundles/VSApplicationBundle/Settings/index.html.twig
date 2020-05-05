@@ -22,22 +22,40 @@
         <!-- ============================================================== -->
         <!-- end pageheader -->
         <!-- ============================================================== -->
-       
+        {% set siteId =  0 %}
         <div class="row">
-            <!-- ============================================================== -->
-            <!-- basic tabs  -->
-            <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                	<h5 class="card-header">Global Settings</h5>
+                	<h5 class="card-header">General Settings</h5>
                 	<div class="card-body">
-                	   {% include '@VSApplication/Settings/forms/settings.html.twig' with {'siteId': 0} %}
+                	   {% include '@VSApplication/Settings/forms/settings.html.twig' with {'siteId': siteId} %}
                     </div>
                     <div class="card-footer" id="imContainer">
-                        <button type="button" class="btn btn-primary" id="btnSaveGeneralSettings">Save</button>
+                        <button type="button" class="btn btn-primary btnSaveSettings"  data-siteId="{{ siteId }}">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TEST SITE -->
+        {% set siteId =  constant( 'App\\Entity\\SiteSettings::SITE_TEST' ) %}
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">Test Site Settings</h5>
+                    <div class="card-body">
+                       {% include '@VSApplication/Settings/forms/settings.html.twig' with {'siteId': siteId} %}
+                    </div>
+                    <div class="card-footer" id="imContainer">
+                        <button type="button" class="btn btn-primary btnSaveSettings" data-siteId="{{ siteId }}">Save</button>
                     </div>
                 </div>
             </div>
         </div>
     </div> 
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags( 'js/settings' ) }}
 {% endblock %}

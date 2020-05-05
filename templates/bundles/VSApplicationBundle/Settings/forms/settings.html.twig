@@ -1,4 +1,5 @@
-{{ form_start(form, {'attr': {'id': 'formSettings_' ~ siteId, 'class': 'form-horizontal '} }) }}
+{% set form =  settingsForm.createView %}
+{{ form_start(form, {'attr': {'id': 'formSettings_' ~ siteId, 'class': 'form-horizontal '}, 'action': path( 'vs_app_settings_handle', {'siteId': siteId} ) }) }}
     {{ form_widget(form._token) }}
     
     {% if form_errors(form) is not empty %}
@@ -10,7 +11,7 @@
         </div>
     {% endif %}
     
-    <label class="custom-control custom-checkbox">  
+    <label class="custom-control custom-checkbox">
         <input type="checkbox" id="page_form_enabled" name="settings_form[maintenanceMode]" 
             class="custom-control-input form-check-input"
             {% if form.vars.value.maintenanceMode %}checked="checked"{% endif %}

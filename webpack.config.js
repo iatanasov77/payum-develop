@@ -16,6 +16,7 @@ Encore
     
     .addEntry( 'js/app', './assets/js/app.js' )
     
+    .addEntry('js/settings', './assets/js/pages/settings.js')
     .addEntry('js/profile', './assets/js/pages/profile.js')
     .addEntry('js/taxonomy', './assets/js/pages/taxonomy.js')
     .addEntry('js/pages-edit', './assets/js/pages/pages-edit.js')

@@ -7,5 +7,27 @@ require( '../vendor/bootstrap/js/bootstrap.bundle.js' );
 require( '../vendor/slimscroll/jquery.slimscroll.js' );
 require( '../libs/js/main-js.js' );
 
-//require( 'jquery-easyui/css/easyui.css' );
-//require( 'jquery-easyui/js/jquery.easyui.min.js' );
+$( function()
+{
+	
+	$( '.btnDelete' ).on( 'click', function ( e )
+	{
+		e.preventDefault();
+		var confirmed	= confirm( 'Do you realy want delete this item ?' );
+		
+		if ( confirmed ) {
+			$.ajax({
+			     url : $( this ).attr( 'href' ),
+			     method : 'DELETE',
+			     data : {
+			    	 _csrf_token: $( this ).attr( 'data-csrfToken' )
+			     }
+			}).done( function() {
+				  document.location = document.location;
+			});
+		}
+		
+		return false;
+	});
+	
+});

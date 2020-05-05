@@ -1,11 +1,11 @@
 vs_application:
     resources:
-        site:
-            classes:
-                model: App\Entity\Site
         settings:
             classes:
                 model: App\Entity\Settings
+        site_settings:
+            classes:
+                model: App\Entity\SiteSettings
         taxonomy:
             classes:
                 model: App\Entity\Taxonomy\Taxonomy
@@ -24,9 +24,9 @@ vs_application:
                 attributes:
                     id: devTests
                 childs:
-                    taxonomy_test_products:
-                        name: Test Taxonomy with Product Categorization
-                        route: app_test_taxonomy
+                    #taxonomy_test_products:
+                    #    name: Test Taxonomy with Product Categorization
+                    #    route: app_test_taxonomy
             appBundle:
                 name: Symfony Application Bundle
                 uri: "javascript:;"

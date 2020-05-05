@@ -5,7 +5,7 @@ use VS\ApplicationBundle\Model\TaxonTranslation as BaseTaxonTranslation;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="APP_TaxonTranslations")
+ * @ORM\Table(name="VSAPP_TaxonTranslations")
  */
 class TaxonTranslation extends BaseTaxonTranslation
 {
