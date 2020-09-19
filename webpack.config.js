@@ -3,7 +3,41 @@ var Encore = require( '@symfony/webpack-encore' );
 Encore
 	.setOutputPath( 'public/assets/build/' )
 	.setPublicPath( '/assets/build' )
+    
+   // delete old files before creating them
     .cleanupOutputBeforeBuild()
+    
+    // generate runtime.js that must to be loaded into the page template
+    // bootstrap the environement
+    .enableSingleRuntimeChunk()
+
+    // add debug data in development
+    .enableSourceMaps(!Encore.isProduction())
+
+    // uncomment to create hashed filenames (e.g. app.abc123.css)
+    .enableVersioning(Encore.isProduction())
+
+    // show OS notifications when builds finish/fail
+    .enableBuildNotifications()
+
+    // empty the outputPath dir before each build
+    .cleanupOutputBeforeBuild()
+
+    // see https://symfony.com/doc/current/frontend/encore/bootstrap.html
+    .enableSassLoader(function(sassOptions) {}, {
+        resolveUrlLoader: true
+    })
+    
+    .autoProvidejQuery()
+    
+    .configureFilenames({
+        js: '[name].js?[contenthash]',
+        css: '[name].css?[contenthash]',
+        images: 'images/[name].[ext]?[hash:8]',
+        fonts: 'fonts/[name].[ext]?[hash:8]'
+    })
+    
+    
     
     .copyFiles({
          from: './assets/images',
@@ -20,20 +54,6 @@ Encore
     .addEntry('js/profile', './assets/js/pages/profile.js')
     .addEntry('js/taxonomy', './assets/js/pages/taxonomy.js')
     .addEntry('js/pages-edit', './assets/js/pages/pages-edit.js')
-    
-    .autoProvidejQuery()
-    .enableSassLoader(function(sassOptions) {}, {
-        resolveUrlLoader: true
-    })
-    .configureFilenames({
-        js: '[name].js?[contenthash]',
-        css: '[name].css?[contenthash]',
-        images: 'images/[name].[ext]?[hash:8]',
-        fonts: 'fonts/[name].[ext]?[hash:8]'
-    })
-    .enableSingleRuntimeChunk()
-    .enableVersioning(Encore.isProduction())
-    .enableSourceMaps( !Encore.isProduction() )
 ;
 
 module.exports = Encore.getWebpackConfig();

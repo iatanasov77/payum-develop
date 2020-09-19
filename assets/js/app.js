@@ -1,4 +1,5 @@
 require( '../css/main.css' );
+require( '../css/main.scss' );
 
 require( '../vendor/jquery/jquery-3.3.1.min.js' );
 require( 'jquery-ui-dist/jquery-ui.css' );

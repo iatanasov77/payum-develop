@@ -64,7 +64,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "VS\\ApplicationBundle\\": "lib/VS/ApplicationBundle/",
+            "VS\\ApplicationBundle\\": "lib/VS/ApplicationBundle/lib/",
             "VS\\CmsBundle\\": "lib/VS/CmsBundle/",
             "VS\\UsersBundle\\": "lib/VS/UsersBundle/",
             "IA\\PaymentBundle\\": "lib/IA/PaymentBundle/",
