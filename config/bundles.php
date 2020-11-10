@@ -29,6 +29,7 @@ return [
     
     // VS Cms
     VS\CmsBundle\VSCmsBundle::class => ['all' => true],
+    Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     
     // VS Payment and Subscriptions
     //IA\PaymentBundle\IAPaymentBundle::class => ['all' => true],

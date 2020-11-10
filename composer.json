@@ -26,7 +26,9 @@
        	"vankosoft/cms-bundle": "dev-develop",
        	"iatanasov77/vs-payment-bundle": "dev-develop",
        	"iatanasov77/vs-users-subscriptions-bundle": "dev-develop",
-        "vasek-purchart/tracy-blue-screen-bundle": "^3.0"
+        "vasek-purchart/tracy-blue-screen-bundle": "^3.0",
+        
+        "knplabs/knp-paginator-bundle": "^3.0"
     },
     "require-dev": {
     	"symfony/debug-bundle": "^4.2",
@@ -59,7 +61,8 @@
     "config": {
         "process-timeout":      600,
         "preferred-install":    "dist",
-        "github-protocols":     ["https"]
+        "github-protocols":     ["https"],
+        "discard-changes":		true
     },
     "autoload": {
         "psr-4": {

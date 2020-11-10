@@ -16,19 +16,19 @@
     <body>
         <div class="dashboard-main-wrapper">
             <div class="dashboard-header">
-                {% include 'layout/top.html.twig' %}
+                {% include 'layouts/concept-master/layout/top.html.twig' %}
             </div>
             
             <div class="nav-left-sidebar sidebar-dark">
                 <div class="menu-list">
-                    {% include 'layout/side.html.twig' %}
+                    {% include 'layouts/concept-master/layout/side.html.twig' %}
                 </div>
             </div>
             
             <div class="dashboard-wrapper">
             	{% block content %}{% endblock %}
             	
-            	{% include 'layout/footer.html.twig' %}
+            	{% include 'layouts/concept-master/layout/footer.html.twig' %}
             </div>
         </div>
         

@@ -10,9 +10,15 @@
 [submodule "lib/VS/UsersBundle"]
 	path = lib/VS/UsersBundle
 	url = https://github.com/iatanasov77/vs-users-bundle
+		branch = develop
 [submodule "lib/VS/ApplicationBundle"]
 	path = lib/VS/ApplicationBundle
 	url = https://github.com/iatanasov77/vs-application-bundle.git
+		branch = develop
 [submodule "lib/VS/CmsBundle"]
 	path = lib/VS/CmsBundle
 	url = https://github.com/iatanasov77/vs-cms-bundle.git
+		branch = develop
+[submodule "lib/Wasinger/BundleAssetProviderBundle"]
+	path = lib/Wasinger/BundleAssetProviderBundle
+	url = https://github.com/wasinger/bundle-asset-provider-bundle.git
