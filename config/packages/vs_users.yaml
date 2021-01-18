@@ -1,0 +1,8 @@
+vs_users:
+    resources:
+        users:
+            classes:
+                model:      App\Entity\UserManagement\User
+                interface:  Sylius\Component\Resource\Model\ResourceInterface
+                #controller: VS\UsersBundle\Controller\UsersCrudController
+                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository      
