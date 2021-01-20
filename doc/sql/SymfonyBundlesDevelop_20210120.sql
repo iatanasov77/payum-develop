@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 20, 2021 at 11:03 AM
+-- Generation Time: Jan 20, 2021 at 03:24 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.4.14
 
@@ -38,6 +38,8 @@ CREATE TABLE `IACMS_PageCategories` (
 --
 
 INSERT INTO `IACMS_PageCategories` (`id`, `page_id`, `taxon_id`) VALUES
+(1, 2, 13),
+(2, 8, 13),
 (3, 3, 13);
 
 -- --------------------------------------------------------

@@ -9,5 +9,5 @@ use VS\UsersBundle\Model\User as BaseUser;
  */
 class User extends BaseUser
 {
-   
+    
 }

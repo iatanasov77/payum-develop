@@ -1,34 +1,26 @@
 <?php namespace App\Controller\VsCms;
 
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
+use VS\ApplicationBundle\Controller\AbstractCrudController;
 
-class PagesController extends Controller
+class PagesController extends AbstractCrudController
 {
-    /**
-     * @Route("/vs_cms/pages", name="vs_cms-pages-index")
-     */
-    public function indexAction( Request $request ): Response
+    protected function prepareEntity( &$entity, $form, Request $request )
     {
-        $er = $this->getDoctrine()->getRepository( 'App\Entity\Cms\Page' );
+        $post   = $request->request->get( 'page_form' );
         
-        return $this->render( 'vs_cms/pages/index.html.twig', [
-            'items'         => $er->findAll(),
-        ]);
+        $entity->getCategory()->setTaxon( $this->getTaxon( $post['category_taxon'] ) );
+        $entity->setTranslatableLocale( $form['locale']->getData() );
     }
     
-    /**
-     * @Route("/vs_cms/pages/{id}", name="vs_cms-pages-show")
-     */
-    public function show( Request $request ): Response
+    protected function customData(): array
     {
-        $id     = $request->attributes->get( 'id' );
-        $page   = $this->getDoctrine()->getRepository( 'App\Entity\Cms\Page' )->find( $id );
-
-        return $this->render( 'vs_cms/pages/show.html.twig', [
-            'page' => $page
-        ]);
+        return [
+            'taxonomyId'    => \App\Entity\Cms\PageCategory::TAXONOMY_ID
+        ];
+    }
+    
+    protected function getTaxon( $taxonId )
+    {
+        return $this->get( 'vs_application.repository.taxon' )->find( $taxonId );
     }
 }

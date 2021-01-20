@@ -1,4 +1,4 @@
-{% extends "layout.html.twig" %}
+{% extends "layouts/concept-master/layout.html.twig" %}
 
 {% block title %}{{ parent() }} :: Create User{% endblock %}
 
@@ -32,7 +32,9 @@
                 <section class="panel">                                          
 				    <div class="panel-body bio-graph-info">
 				        <h1> Profile Info</h1>
+				        {#
 				        {% form_theme form with ['IAApplicationCoreBundle:Form:form.html.twig', _self] %}
+				        #}
 				        
 				        {% block profile_row %}
 				            {# {{ block('form_widget_simple') }} #}

@@ -25,10 +25,10 @@ return [
     
     // VS Users
     VS\UsersBundle\VSUsersBundle::class => ['all' => true],
-    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     
     // VS Cms
     VS\CmsBundle\VSCmsBundle::class => ['all' => true],
+    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     
     // VS Payment and Subscriptions

@@ -3,6 +3,7 @@ vs_cms:
         pages:
             classes:
                 model: App\Entity\Cms\Page
+                controller: App\Controller\VsCms\PagesController    # override default bundle's controller
         page_categories:
             classes:
                 model: App\Entity\Cms\PageCategory

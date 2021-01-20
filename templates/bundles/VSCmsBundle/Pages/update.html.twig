@@ -94,6 +94,16 @@
                                 {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
                             </div>
                             
+                            <div class="row">&nbsp;</div>
+                            <div class="">
+								<div class="card bg-info text-white shadow">
+									<div class="card-body">
+									  To display FOSCKEditor run: `bin/console ckeditor:install` and `bin/console assets:install`
+									  <div class="text-white-50 small">Reference: https://symfony.com/doc/current/bundles/FOSCKEditorBundle/usage/ckeditor.html</div>
+									</div>
+								</div>
+					        </div>
+					        
                             <div class="form-group">
                                 {{ form_label(form.text, null, {
                                     'label_attr': {'class': 'col-form-label'}
