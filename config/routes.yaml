@@ -15,7 +15,7 @@ app_logout:
     path: /logout
     controller: App\Controller\AuthController::logout
 
-ia_users:
+vs_users:
     resource: "@VSUsersBundle/Resources/config/routing/user_management.yml"
     prefix:   /users_bundle/
         

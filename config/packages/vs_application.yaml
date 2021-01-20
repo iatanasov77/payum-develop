@@ -51,7 +51,16 @@ vs_application:
                     categories:
                         name: Categories
                         route: vs_cms_page_categories_index
-                        
+            usersBundle:
+                name: Symfony Users Bundle
+                uri: "javascript:;"
+                attributes:
+                    id: usersBundle
+                childs:
+                    users:
+                        name: Users
+                        route: vs_users_users_index
+
         mainMenu:
             application:
                 name: Application Core

@@ -1,0 +1,3 @@
+vs_users_users:
+    resource: "@VSUsersBundle/Resources/config/routing/user_management.yml"
+    prefix:   /bundles/vs-users/
