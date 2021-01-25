@@ -65,24 +65,30 @@ vs_application:
                         route: vs_users_users_index
 
         mainMenu:
-            application:
-                name: Application Core
+            site_1:
+                name: Site 1
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_document_alt
                 childs:
-                    settings:
-                        name: General Settings
-                        route: vs_application_settings_index
-                    taxonomy:
-                        name: Taxonomy
-                        route: vs_application_taxonomy_index
+                    home:
+                        name: Home Page
+                        route: app_site1_home
+            site_2:
+                name: Site 2
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_document_alt
+                childs:
+                    home:
+                        name: Home Page
+                        route: app_site2_home
 
                         
         profileMenu:
             profile:
                 name: "My Profile"
-                route: ia_users_profile_show
+                route: vs_users_profile_show
                 attributes:
                     iconClass: "fas fa-user mr-2"
             logout:

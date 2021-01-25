@@ -1,4 +1,6 @@
 security:
+    access_denied_url: /admin/login
+    
     encoders:
         App\Entity\UserManagement\User:
             algorithm: auto
@@ -11,19 +13,20 @@ security:
                 property: username
     firewalls:
         main:
-            pattern:      ^/(?!admin)
+            # Uncomment below line when you want to deny anonymous access to /admin path
+            #pattern:      ^/(?!admin)
             provider:       default_provider
             anonymous: true
             form_login:
                 login_path: app_login
-                check_path: app_login
+                check_path: fos_user_security_check
                 username_parameter: _username
                 password_parameter: _password
                 always_use_default_target_path: false
-                default_target_path:  /cms/pages
+                default_target_path:  /
             logout:
-                path:   /logout
-                target: /login
+                path:   /admin/logout
+                target: /admin/login
                 invalidate_session: true
 
     # Easy way to control access for large sections of your site
@@ -33,3 +36,4 @@ security:
       - { path: ^/resetting/request, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      

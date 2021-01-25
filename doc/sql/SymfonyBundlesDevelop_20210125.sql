@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2021 at 11:05 AM
+-- Generation Time: Jan 25, 2021 at 10:07 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.4.14
 
@@ -319,7 +319,7 @@ CREATE TABLE `VSUM_Users` (
 --
 
 INSERT INTO `VSUM_Users` (`id`, `preferedLocale`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `confirmation_token`, `password_requested_at`, `roles`, `subscriptionId`, `user_info_id`, `prefered_locale`, `first_name`, `last_name`, `info_id`) VALUES
-(1, 'en', 'admin', 'admin', 'admin', 'admin', 1, 'ZEAYhdMkJnNRZ0t5JO0Ol5AecbXAwj3ennB0CrmBIBY', '$argon2i$v=19$m=65536,t=4,p=1$MWFNejhXMzFwVFdpVElGMg$qq6lIt3kFlHxPq6plag34jEwsfMvglffqYH9UkKL26Q', '2020-04-18 13:20:04', NULL, NULL, 'a:1:{i:0;s:10:\"ROLE_ADMIN\";}', 3, 4, 'en', 'NOT_EDITED_YET', 'NO_EDITED_YET', NULL),
+(1, 'en', 'admin', 'admin', 'admin', 'admin', 1, 'ZEAYhdMkJnNRZ0t5JO0Ol5AecbXAwj3ennB0CrmBIBY', '$argon2i$v=19$m=65536,t=4,p=1$MWFNejhXMzFwVFdpVElGMg$qq6lIt3kFlHxPq6plag34jEwsfMvglffqYH9UkKL26Q', '2020-04-18 13:20:04', NULL, NULL, 'a:1:{i:0;s:10:\"ROLE_ADMIN\";}', 3, 4, 'en', 'Admin', 'Admin', 4),
 (2, 'en', 'admin2', 'admin2', 'admin2', 'admin2', 1, '.oHKGUigY1G7Z0zMWuYTGC4DZ2Mc9fQNZ2jBLvkTTn0', '$argon2i$v=19$m=65536,t=4,p=1$MWFNejhXMzFwVFdpVElGMg$qq6lIt3kFlHxPq6plag34jEwsfMvglffqYH9UkKL26Q', NULL, NULL, NULL, 'a:0:{}', NULL, NULL, 'en', 'NOT_EDITED_YET', 'NO_EDITED_YET', NULL),
 (3, 'en', 'admin', 'admin', 'admin', 'admin', 1, 'rID/Lqp8tiUKWL9s7pAPzal3y00yLvBzx0UC88V8.Zk', '$argon2i$v=19$m=65536,t=4,p=1$NkdQVUMuNXYzZGNxL2U1Nw$lMSM2JxwjZNuo53LCGeuEVh0izOxrwUGIb2D5h9a/64', NULL, NULL, NULL, 'a:0:{}', NULL, NULL, 'en', 'NOT_EDITED_YET', 'NO_EDITED_YET', NULL);
 
@@ -332,7 +332,7 @@ INSERT INTO `VSUM_Users` (`id`, `preferedLocale`, `username`, `username_canonica
 CREATE TABLE `VSUM_UsersActivities` (
   `id` int NOT NULL,
   `date` datetime NOT NULL,
-  `userId` int DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
   `activity` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -340,7 +340,7 @@ CREATE TABLE `VSUM_UsersActivities` (
 -- Dumping data for table `VSUM_UsersActivities`
 --
 
-INSERT INTO `VSUM_UsersActivities` (`id`, `date`, `userId`, `activity`) VALUES
+INSERT INTO `VSUM_UsersActivities` (`id`, `date`, `user_id`, `activity`) VALUES
 (1, '2019-11-04 00:00:00', 1, 'Test Activity'),
 (2, '2019-11-05 20:13:17', 1, 'User subscribed to the \"Test Package with Monthly Plan\". Payed with \"paypal_express_checkout_recurring_payment\"'),
 (3, '2019-11-06 04:30:04', 1, 'User subscribed to the \"Test Package with Monthly Plan\". Payed with \"paypal_express_checkout_recurring_payment\"'),
@@ -391,7 +391,7 @@ INSERT INTO `VSUM_UsersInfo` (`id`, `apiToken`, `firstName`, `lastName`, `countr
 CREATE TABLE `VSUM_UsersNotifications` (
   `id` int NOT NULL,
   `date` datetime NOT NULL,
-  `userId` int DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
   `notification` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -399,7 +399,7 @@ CREATE TABLE `VSUM_UsersNotifications` (
 -- Dumping data for table `VSUM_UsersNotifications`
 --
 
-INSERT INTO `VSUM_UsersNotifications` (`id`, `date`, `userId`, `notification`) VALUES
+INSERT INTO `VSUM_UsersNotifications` (`id`, `date`, `user_id`, `notification`) VALUES
 (1, '2019-11-04 00:00:00', 1, 'Test Notification');
 
 -- --------------------------------------------------------

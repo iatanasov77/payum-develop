@@ -1,4 +1,4 @@
-{% extends "layouts/concept-master/layout.html.twig" %}
+{% extends "admin/layouts/concept-master/layout.html.twig" %}
 
 {% block content %}
 	<div class="container-fluid dashboard-content">
@@ -8,7 +8,7 @@
                     <h2 class="pageheader-title">Developement Dashboard </h2>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
-                        	{{ knp_menu_render('breadcrumbs', {'template': 'menu/breadcrumb.html.twig'}) }}
+                        	{{ knp_menu_render('breadcrumbs', {'template': 'admin/menu/breadcrumb.html.twig'}) }}
                         </nav>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
 	        </div>
 	     
 	        <div class="accordion-menu">
-	            {{ knp_menu_render('dev', {'template': 'menu/dev.html.twig'}) }}
+	            {{ knp_menu_render('dev', {'template': 'admin/menu/dev.html.twig'}) }}
 	        </div>
-	    </div>              
+	    </div>
     </div>
 {% endblock %}

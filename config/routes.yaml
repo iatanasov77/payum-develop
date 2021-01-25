@@ -1,21 +1,32 @@
-
-home:
+app_route:
     path: /
-    controller: App\Controller\DefaultController::index
+    controller: App\Controller\Admin\DefaultController::gotoAdmin
+
+# Admin Panel Routes
+##########################################
+home:
+    path: /admin/
+    controller: App\Controller\Admin\DefaultController::index
 
 security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
     prefix:   /security/
-    
+
 app_login:
-    path: /login
-    controller: App\Controller\AuthController::login
+    path: /admin/login
+    controller: App\Controller\Admin\AuthController::login
     
 app_logout:
-    path: /logout
-    controller: App\Controller\AuthController::logout
+    path: /admin/logout
+    controller: App\Controller\Admin\AuthController::logout
 
-vs_users:
-    resource: "@VSUsersBundle/Resources/config/routing/user_management.yml"
-    prefix:   /users_bundle/
-        
+# Sites Routes
+##########################################
+app_site1_home:
+    path: /site_1/
+    controller: App\Controller\Site_1\DefaultController::index
+
+app_site2_home:
+    path: /site_2/
+    controller: App\Controller\Site_2\DefaultController::index
+

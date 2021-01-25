@@ -3,4 +3,7 @@ vs_users:
         users:
             classes:
                 model: App\Entity\UserManagement\User
+        user_info:
+            classes:
+                model: App\Entity\UserManagement\UserInfo
      
