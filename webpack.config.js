@@ -54,6 +54,7 @@ Encore
     .addEntry('js/profile', './assets/js/pages/profile.js')
     .addEntry('js/taxonomy', './assets/js/pages/taxonomy.js')
     .addEntry('js/pages-edit', './assets/js/pages/pages-edit.js')
+    .addEntry('js/pages-categories-edit', './assets/js/pages/pages-categories-edit.js')
 ;
 
 module.exports = Encore.getWebpackConfig();

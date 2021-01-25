@@ -69,8 +69,13 @@
                                 {{ form_widget(form.locale, {'attr': {'class': 'form-control'}}) }}
                             </div>
                             
-                            {% if(item.id) %}{% set taxonId = item.category.taxon.id %}{% else %}{% set taxonId = '' %}{% endif %}
-	                        {% set tree_data_options = "url:'" ~ path( 'vs_application_taxonomy_taxons_easyui_combotree', {'id': taxonomyId} ) ~ "', required:true" %}
+                            {% if(item.id) %}
+                            	{% set taxonId = item.category.taxon.id %}
+                            {% else %}
+                            	{% set taxonId = '' %}
+                            {% endif %}
+                            
+	                        {% set tree_data_options = "url:'" ~ path( 'vs_application_taxonomy_taxons_easyui_combotree', {'taxonomyId': taxonomyId} ) ~ "', required:true" %}
                             <div class="form-group">
                                 {{ form_label(form.category_taxon, null, {
                                     'label_attr': {'class': 'col-form-label'}

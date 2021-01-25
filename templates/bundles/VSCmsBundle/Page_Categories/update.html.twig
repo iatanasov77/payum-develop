@@ -1,10 +1,5 @@
 {% extends "layouts/concept-master/layout.html.twig" %}
 
-{% block head_styles %}
-    {{ parent() }}
-    
-{% endblock %}
-
 {# Import Macros #}
 {% from 'SyliusResourceBundle:Macros:actions.html.twig' import create %}
 
@@ -63,6 +58,12 @@
                                 {{ form_widget(form.locale, {'attr': {'class': 'form-control'}}) }}
                             </div>
                              
+                            {% if(item.id) %}
+                            	{% set taxonId = item.taxon.parent.id %}
+                            {% else %}
+                            	{% set taxonId = '' %}
+                            {% endif %}
+                            {% set tree_data_options = "url:'" ~ path( 'vs_application_taxonomy_taxons_easyui_combotree', {'taxonomyId': taxonomyId} ) ~ "', required:true" %}
                             <div class="form-group">
                                 {{ form_label(form.parent, null, {
                                     'label_attr': {'class': 'col-form-label'}
@@ -71,7 +72,8 @@
                                 {{ form_widget(form.parent, {
                                     'attr': {
                                         'class': 'easyui-combotree',
-                                        'data-options': ''
+                                        'data-options': tree_data_options,
+                                        'data-value': taxonId
                                     }
                                 }) }}
                             </div>
@@ -101,11 +103,14 @@
     </div> 
 {% endblock %}
 
+{% block head_styles %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/pages-categories-edit' ) }}
+{% endblock %}
 
-{#
 {% block body_scripts %}
     {{ parent() }}
    
-	{{ encore_entry_script_tags( 'pages_categories_edit' ) }}
+    {{ encore_entry_script_tags( 'js/pages-categories-edit' ) }}
 {% endblock %}
-#}
