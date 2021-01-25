@@ -5,7 +5,7 @@ use VS\CmsBundle\Model\PageCategory as BasePageCategory;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="IACMS_PageCategories")
+ * @ORM\Table(name="VSCMS_PageCategories")
  */
 class PageCategory extends BasePageCategory
 {

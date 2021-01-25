@@ -1,5 +1,7 @@
 require( 'bootstrap-gtreetable/dist/bootstrap-gtreetable.css' );
 require( 'bootstrap-gtreetable/dist/bootstrap-gtreetable.js' );
+require( 'jquery-easyui/css/easyui.css' );
+require( 'jquery-easyui/js/jquery.easyui.min.js' );
 
 $( function()
 {
@@ -10,6 +12,10 @@ $( function()
 			success: function( response )
 			{
 				$( '#taxonomyTaxonBody > div.card-body' ).html( response );
+				$('#taxon_form_parentTaxon').combotree({
+				    url: $( this ).attr( 'data-easyui-url' ),
+				    required: true
+				});
 				$( '#taxonomyTaxonModal' ).modal( 'toggle' );
 			},
 			error: function()
@@ -31,7 +37,7 @@ $( function()
 			return {
 				type: 'GET',
 				url: $( '#tableTaxons' ).attr( 'data-url' ),
-				data: { 'taxonId': id },
+				data: { 'parentTaxonId': id },
 				dataType: 'json',
 				error: function( XMLHttpRequest ) {
 					alert( 'GTreeTable ERROR !!!' );

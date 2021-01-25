@@ -12,9 +12,12 @@ vs_application:
         taxon:
             classes:
                 model: App\Entity\Taxonomy\Taxon
-            #translation:
-            #    classes:
-            #        model: App\Entity\Taxonomy\TaxonTranslation
+            translation:
+                classes:
+                    model: App\Entity\Taxonomy\TaxonTranslation
+        translation:
+            classes:
+                model: App\Entity\Translation
                 
     menu:
         devMenu:

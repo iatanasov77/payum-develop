@@ -1,5 +1,4 @@
-<?php 
-namespace App\Entity;
+<?php  namespace App\Entity;
 /**
 namespace Gedmo\Translatable\Entity;
 
@@ -8,15 +7,13 @@ namespace Gedmo\Translatable\Entity;
 */
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Translatable\Entity\MappedSuperclass\AbstractTranslation;
+use VS\ApplicationBundle\Model\Translation as BaseTranslation;
 
 /**
- * @ORM\Table(name="IACORE_Translations", indexes={
- *      @ORM\Index(name="article_translation_idx", columns={"locale", "object_class", "field", "foreign_key"})
- * })
- * @ORM\Entity(repositoryClass="Gedmo\Translatable\Entity\Repository\TranslationRepository")
+ * @ORM\Table(name="VSAPP_Translations")
+ * @ORM\Entity
  */
-class Translation extends AbstractTranslation
+class Translation extends BaseTranslation
 {
      
 }

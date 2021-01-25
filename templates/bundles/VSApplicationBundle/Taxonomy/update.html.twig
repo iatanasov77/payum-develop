@@ -65,7 +65,10 @@
     	                <div class="card-header">
                             <div class="float-left" style="height:30px; padding-top:10px;">Taxonomy Taxons</div>
                             <div class="btn-group float-right">
-                                <a class="btn btn-primary btnTaxonomyTaxon" title="Create New Taxon" href="javascript:void(0);" data-url="{{ path('vs_application_taxonomy_taxon_edit', {'taxonomyId': item.id}) }}">
+                                <a class="btn btn-primary btnTaxonomyTaxon" title="Create New Taxon" href="javascript:void(0);" 
+                                	data-url="{{ path('vs_application_taxonomy_taxon_edit', {'taxonomyId': item.id}) }}"
+                                	data-easyui-url="{{ path( 'vs_application_taxonomy_taxons_easyui_combotree', {'taxonomyId': item.id} ) }}"
+                                >
                                     Create New Taxon
                                 </a>&nbsp;
                             </div>
@@ -74,7 +77,7 @@
                             <!--  http://gtreetable.gilek.net/ -->
                             <table class="table gtreetable"
                                    id="tableTaxons"
-                                   data-url="{{ url('vs_application_taxonomy_taxons_gtreetable', {'id': item.id}) }}"
+                                   data-url="{{ url('vs_application_taxonomy_taxons_gtreetable', {'taxonomyId': item.id}) }}"
                             >
                             </table>
                         </div>
@@ -85,8 +88,8 @@
     </div>   
 {% endblock content %}
 
-{% block modals %} 
-    {% include 'modal/taxonomy_taxon_edit.html.twig' %}
+{% block modals %}
+    {% include '@VSApplication/Taxonomy/modal/taxonomy_taxon_edit.html.twig' %}
 {% endblock %}
     
 {% block head_styles %}	
