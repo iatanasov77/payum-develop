@@ -6,4 +6,6 @@ vs_users:
         user_info:
             classes:
                 model: App\Entity\UserManagement\UserInfo
-     
+        reset_password_request:
+            classes:
+                model: App\Entity\UserManagement\ResetPasswordRequest

@@ -11,6 +11,6 @@ class DefaultController extends Controller
     }
     
     public function gotoAdmin() {
-        return $this->redirectToRoute( 'home' );
+        return $this->redirectToRoute( 'app_home' );
     }
 }

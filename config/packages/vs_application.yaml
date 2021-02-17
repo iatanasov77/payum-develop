@@ -66,7 +66,7 @@ vs_application:
 
         mainMenu:
             site_1:
-                name: Site 1
+                name: "Site 1"
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_document_alt
@@ -75,7 +75,7 @@ vs_application:
                         name: Home Page
                         route: app_site1_home
             site_2:
-                name: Site 2
+                name: "Site 2"
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_document_alt
@@ -83,8 +83,26 @@ vs_application:
                     home:
                         name: Home Page
                         route: app_site2_home
-
                         
+            user_permissions:
+                name: "User Permissions"
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_document_alt
+                childs:
+                    page_super_admin:
+                        name: Page Only For Super-Admins
+                        route: app_page_super_admin_only
+                    page_admin:
+                        name: Page Only For Admins
+                        route: app_page_admin_only
+                    page_specific_role_1:
+                        name: Page Only For Specific Role 1
+                        route: app_page_specific_role_1_only
+                    page_specific_role_2:
+                        name: Page Only For Specific Role 2
+                        route: app_page_specific_role_2_only
+  
         profileMenu:
             profile:
                 name: "My Profile"

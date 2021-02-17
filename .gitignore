@@ -3,9 +3,7 @@
 /.project
 /.settings
 
-/.env.local
-/.env.local.php
-/.env.*.local
+/.env
 /var/
 /vendor/
 

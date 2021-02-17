@@ -15,10 +15,8 @@
         {% if error %}
             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
-        <form class="login-form" action="{{ path('fos_user_security_check') }}" method="post">
+        <form class="login-form" method="post">
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-            
-            
             
             <div class="form-group">
                 <input type="text" class="form-control form-control-lg" placeholder="Username" autofocus id="username" name="_username" value="{{ last_username }}" />
@@ -36,9 +34,9 @@
     </div>
     <div class="card-footer bg-white p-0  ">
         <div class="card-footer-item card-footer-item-bordered">
-            <a href="#" class="footer-link">Create An Account</a></div>
+            <a href="{{ path('vs_users_register_form') }}" class="footer-link">Create An Account</a></div>
         <div class="card-footer-item card-footer-item-bordered">
-            <a href="#" class="footer-link">Forgot Password</a>
+            <a href="{{ path('vs_users_forgot_password_form') }}" class="footer-link">Forgot Password</a>
         </div>
     </div>
 {% endblock %}

@@ -9,6 +9,9 @@ parameters:
     debug.error_handler.throw_at: 1
     #yaml.parser.class: Symfony\Component\Yaml\Parser
     
+    vs_app.page.tac: 'vs_app_page_tac'
+    vs_users.login_by: 'username'
+    
 services:
 
     # default configuration for services in *this* file
@@ -34,6 +37,7 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
         autowire: false
+        #autowire: true
  
     vs_application.form.type.settings:
         class: VS\ApplicationBundle\Form\SettingsForm

@@ -4,7 +4,7 @@ use VS\ApplicationBundle\Controller\AbstractCrudController;
 
 class PagesController extends AbstractCrudController
 {
-    protected function prepareEntity( &$entity, $form, Request $request )
+    protected function prepareEntity( &$entity, &$form, Request $request )
     {
         $post   = $request->request->get( 'page_form' );
         

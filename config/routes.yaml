@@ -4,13 +4,9 @@ app_route:
 
 # Admin Panel Routes
 ##########################################
-home:
+app_home:
     path: /admin/
     controller: App\Controller\Admin\DefaultController::index
-
-security:
-    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-    prefix:   /security/
 
 app_login:
     path: /admin/login

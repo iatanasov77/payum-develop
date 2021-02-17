@@ -37,8 +37,6 @@ Encore
         fonts: 'fonts/[name].[ext]?[hash:8]'
     })
     
-    
-    
     .copyFiles({
          from: './assets/images',
          to: 'images/[path][name].[ext]',

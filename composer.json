@@ -19,6 +19,9 @@
         "symfony/validator": "^4.2",
         "symfony/webpack-encore-bundle": "^1.6",
         "symfony/yaml": "^4.2",
+        
+        "symfony/flex": "^1.1",
+        
         "twig/extensions": "^1.5",
         
 		"vankosoft/application-bundle": "dev-develop",
@@ -28,7 +31,8 @@
        	"iatanasov77/vs-users-subscriptions-bundle": "dev-develop",
         "vasek-purchart/tracy-blue-screen-bundle": "^3.0",
         
-        "knplabs/knp-paginator-bundle": "^3.0"
+        "knplabs/knp-paginator-bundle": "^3.0",
+        "symfony/google-mailer": "^4.2"
     },
     "require-dev": {
     	"symfony/debug-bundle": "^4.2",
