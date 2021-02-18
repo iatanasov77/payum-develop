@@ -27,15 +27,15 @@ security:
               path:     /
 
             form_login:
-                login_path: app_login
+                login_path: vs_application_login
                 check_path: login_check
                 username_parameter: _username
                 password_parameter: _password
                 always_use_default_target_path: false
                 default_target_path:  /
             logout:
-                path:   /admin/logout
-                target: /admin/login
+                path: vs_application_logout
+                target: vs_application_login
                 invalidate_session: true
             guard:
                 authenticators:

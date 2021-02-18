@@ -7,10 +7,6 @@ class DefaultController extends Controller
 {
     public function index()
     {
-        return $this->render( 'admin/pages/home.html.twig' );
-    }
-    
-    public function gotoAdmin() {
-        return $this->redirectToRoute( 'app_home' );
+        return $this->redirectToRoute( 'vs_application_dashboard' );
     }
 }

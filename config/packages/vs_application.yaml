@@ -111,7 +111,7 @@ vs_application:
                     iconClass: "fas fa-user mr-2"
             logout:
                 name: "Log Out"
-                route: app_logout
+                route: vs_application_logout
                 attributes:
                     iconClass: "fas fa-power-off mr-2"
             documentation:

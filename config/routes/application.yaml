@@ -1,0 +1,3 @@
+app_default:
+    resource: "@VSApplicationBundle/Resources/config/routing/application.yaml"
+    prefix:   /admin/

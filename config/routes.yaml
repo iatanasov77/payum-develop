@@ -1,20 +1,8 @@
-app_route:
-    path: /
-    controller: App\Controller\Admin\DefaultController::gotoAdmin
-
 # Admin Panel Routes
 ##########################################
 app_home:
-    path: /admin/
+    path: /
     controller: App\Controller\Admin\DefaultController::index
-
-app_login:
-    path: /admin/login
-    controller: App\Controller\Admin\AuthController::login
-    
-app_logout:
-    path: /admin/logout
-    controller: App\Controller\Admin\AuthController::logout
 
 # Sites Routes
 ##########################################
