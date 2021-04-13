@@ -1,6 +1,4 @@
 framework:
-    mailer:
-        dsn: '%env(MAILER_DSN)%'
     templating:
         engines: ['twig', 'php']
     #default_locale: en_US

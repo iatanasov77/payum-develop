@@ -1,11 +1,11 @@
 vs_application:
     resources:
+        site:
+            classes:
+                model: App\Entity\Site
         settings:
             classes:
                 model: App\Entity\Settings
-        site_settings:
-            classes:
-                model: App\Entity\SiteSettings
         taxonomy:
             classes:
                 model: App\Entity\Taxonomy\Taxonomy

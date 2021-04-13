@@ -27,4 +27,8 @@ return [
     VasekPurchart\TracyBlueScreenBundle\TracyBlueScreenBundle::class => ['all' => true],
     SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle::class => ['all' => true],
     SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle::class => ['all' => true],
+<<<<<<< HEAD
+=======
+    Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle::class => ['all' => true],
+>>>>>>> 1f36122... Commit
 ];

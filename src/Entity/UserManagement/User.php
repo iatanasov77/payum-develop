@@ -9,6 +9,7 @@ use VS\UsersBundle\Model\User as BaseUser;
  */
 class User extends BaseUser
 { 
+<<<<<<< HEAD
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\UserManagement\UserActivity", mappedBy="user")
      */
@@ -34,4 +35,7 @@ class User extends BaseUser
     {
         return $this->notifications;
     }
+=======
+    
+>>>>>>> 1f36122... Commit
 }
