@@ -10,9 +10,6 @@ parameters:
     #yaml.parser.class: Symfony\Component\Yaml\Parser
     
     vs_app.page.tac: 'vs_app_page_tac'
-<<<<<<< HEAD
-    vs_users.login_by: 'username'
-=======
     #vs_users.login_route: 'app_login'
     vs_users.login_by: 'username'
     vs_users.api_token.domain: '.sbd.lh'
@@ -21,8 +18,8 @@ parameters:
     vs_cms.page_categories.taxonomy_id: 3
     
     vs_app.settings.site_id: 1
->>>>>>> 1f36122... Commit
-    
+
+
 services:
 
     # default configuration for services in *this* file
