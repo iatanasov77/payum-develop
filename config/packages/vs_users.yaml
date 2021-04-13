@@ -15,4 +15,3 @@ vs_users:
         reset_password_request:
             classes:
                 model: App\Entity\UserManagement\ResetPasswordRequest
-
