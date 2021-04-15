@@ -10,9 +10,9 @@
         {{ form_start(form, { 'attr': {'class': 'form-horizontal '} }) }}
         	<div class="row">
         		{% if installedBundles.LiipImagineBundle is defined %}
-        			<img src="{{ asset('uploads/profile_pictures/' ~ user.info.profilePictureFilename) | imagine_filter('profile_form_thumb') }}" />
+        			<img src="{{ asset('public/uploads/profile_pictures/' ~ user.info.profilePictureFilename) | imagine_filter('profile_form_thumb') }}" />
         		{% else %}
-        			<img src="{{ asset('uploads/profile_pictures/' ~ user.info.profilePictureFilename) }}" />
+        			<img src="{{ asset('public/uploads/profile_pictures/' ~ user.info.profilePictureFilename) }}" />
         		{% endif %}
         	</div>
         	<div class="form-group">
