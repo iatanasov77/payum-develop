@@ -16,6 +16,7 @@
 /public/assets/
 /public/build/
 /public/bundles/
+/public/media/
 /public/uploads/profile_pictures/*
 !/public/uploads/profile_pictures/.gitkeep 
 

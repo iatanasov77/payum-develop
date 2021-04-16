@@ -30,6 +30,13 @@ vs_application:
                     #taxonomy_test_products:
                     #    name: Test Taxonomy with Product Categorization
                     #    route: app_test_taxonomy
+                    settings_test_generalization__site_1:
+                        name: Test Settings Generalization (Site 1)
+                        uri: /settings/test_generalization/1
+                    settings_test_generalization__site_2:
+                        name: Test Settings Generalization (Site 2)
+                        uri: /settings/test_generalization/2
+                        
             appBundle:
                 name: Symfony Application Bundle
                 uri: "javascript:;"
