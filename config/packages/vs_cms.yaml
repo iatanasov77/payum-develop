@@ -9,6 +9,3 @@ vs_cms:
                 model: App\Entity\Cms\PageCategory
                 controller: App\Controller\VsCms\PagesCategoryController    # override default bundle's controller
                 #repository: VS\CmsBundle\Repository\PageCategoryTreeRepository
-        page_category_relations:
-            classes:
-                model: App\Entity\Cms\PageCategoryRelation

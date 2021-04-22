@@ -14,3 +14,9 @@ app_site2_home:
     path: /site_2/
     controller: App\Controller\Site_2\DefaultController::index
 
+# CMS TESTS
+##########################################
+app_cms_move_category:
+    path: /bundles/vs-cms/move-category/{sourceId}
+    controller: App\Controller\VsCms\PagesCategoryController::moveCategory
+
