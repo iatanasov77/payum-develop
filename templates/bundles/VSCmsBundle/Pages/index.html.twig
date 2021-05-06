@@ -60,6 +60,12 @@
 	                            <td>
 	                                <div class="btn-group">
 	                                    <div class="btn-group">
+	                                    	<a class="btn btn-outline-primary" href="{{ path('vs_cms_pages_show_by_id', {'id': item.id}) }}" title="Show By ID">
+	                                            <i class="fas fa-eye" style="color: #be4bdb;"></i>
+	                                        </a>
+	                                        <a class="btn btn-outline-primary" href="{{ path('vs_cms_pages_show_by_slug', {'slug': item.slug}) }}" title="Show By SLUG">
+	                                            <i class="fas fa-eye" style="color: #495057;;"></i>
+	                                        </a>
 	                                        <a class="btn btn-primary" href="{{ path('vs_cms_pages_update', {'id': item.id}) }}">
 	                                            <i class="fas fa-edit"></i>
 	                                        </a>
