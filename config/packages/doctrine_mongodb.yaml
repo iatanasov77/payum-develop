@@ -1,0 +1,25 @@
+doctrine_mongodb:
+    default_database: hello_%kernel.environment%
+    default_document_manager: 'default'
+
+    connections:
+        default:
+            server: '%env(resolve:MONGODB_URL)%'
+            options: {}
+    
+    document_managers:
+        default:
+            auto_mapping: true
+            mappings:
+                App:
+                    is_bundle: false
+                    type: annotation
+                    dir: '%kernel.project_dir%/src/Entity'
+                    prefix: 'App\Entity'
+                    alias: App
+#            filters:
+#                filter-name:
+#                    class: Class\Example\Filter\ODM\ExampleFilter
+#                    enabled: true
+            metadata_cache_driver: array # array, apc, apcu, memcache, memcached, redis, wincache, zenddata, xcache
+ 

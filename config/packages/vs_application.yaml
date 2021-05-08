@@ -70,8 +70,46 @@ vs_application:
                     users:
                         name: Users
                         route: vs_users_users_index
+                        
+            MongoDB:
+                name: MongoDB Examples
+                uri: "javascript:;"
+                attributes:
+                    id: mongoDbExamples
+                childs:
+                    products_index:
+                        name: List Products
+                        route: app_mongodb_product_index
+                    products_create:
+                        name: Create New Product
+                        route: app_mongodb_product_create
+            Cassandra:
+                name: Cassandra ODM
+                uri: "javascript:;"
+                attributes:
+                    id: cassandraODM
+                childs:
+                    products_index:
+                        name: List Products
+                        route: app_cassandra_product_index
+                    products_create:
+                        name: Create New Product
+                        route: app_cassandra_product_create
 
         mainMenu:
+            external_tools:
+                name: External Tools
+                uri: "javascript:;"
+                attributes:
+                    id: menu-virtual-hosts
+                    iconClass: "fas fa-project-diagram"
+                childs:
+                    php_info:
+                        name: Php Info
+                        uri: "/info.php"
+                        attributes:
+                            target: '_blank'
+                            
             site_1:
                 name: "Site 1"
                 uri: "javascript:;"

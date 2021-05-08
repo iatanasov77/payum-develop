@@ -1,6 +1,7 @@
 <?php namespace App\Controller\VsCms;
 
 use VS\ApplicationBundle\Controller\AbstractCrudController;
+use Symfony\Component\HttpFoundation\Request;
 
 class PagesController extends AbstractCrudController
 {

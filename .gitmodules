@@ -22,3 +22,6 @@
 [submodule "lib/Wasinger/BundleAssetProviderBundle"]
 	path = lib/Wasinger/BundleAssetProviderBundle
 	url = https://github.com/wasinger/bundle-asset-provider-bundle.git
+[submodule "lib/VS/Alexandra"]
+	path = lib/VS/Alexandra
+	url = https://github.com/iatanasov77/php-cassandra-entities-2.git

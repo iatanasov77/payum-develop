@@ -74,7 +74,9 @@
             "VS\\CmsBundle\\": "lib/VS/CmsBundle/lib/",
             "VS\\UsersBundle\\": "lib/VS/UsersBundle/lib/",
             "IA\\PaymentBundle\\": "lib/IA/PaymentBundle/",
-            "Payum\\Stripe\\": "lib/Payum/Stripe/"
+            "Payum\\Stripe\\": "lib/Payum/Stripe/",
+            
+            "VankoSoft\\Alexandra\\" : "lib/VS/Alexandra/"
         }
     },
     "replace": {
@@ -89,7 +91,8 @@
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "ckeditor:install --clear=drop": "symfony-cmd",
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
