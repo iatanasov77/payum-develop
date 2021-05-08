@@ -1,6 +1,4 @@
-<?php
-
-namespace VankoSoft\AlexandraDev\Model\Entity;
+<?php namespace App\Entity\Cassandra;
 
 use VankoSoft\Alexandra\ODM\Entity\Entity;
 

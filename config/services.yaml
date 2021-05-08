@@ -1,5 +1,6 @@
 imports:
     - { resource: services/developement.yaml }
+    - { resource: services/cassandra.yaml }
 
 parameters:
     lang: 'en'

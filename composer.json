@@ -31,7 +31,10 @@
        	"iatanasov77/vs-users-subscriptions-bundle": "dev-develop",
         "vasek-purchart/tracy-blue-screen-bundle": "^3.0",
         
-        "symfony/google-mailer": "^4.2"
+        "symfony/google-mailer": "^4.2",
+        
+        "hassankhan/config" : "~0.10",
+		"evseevnn/php-cassandra-binary" : "dev-master"
     },
     "require-dev": {
     	"symfony/debug-bundle": "^4.2",

@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: true
+
+    app.noodlehaus_config:
+        class: Noodlehaus\Config
+        arguments: ["%kernel.project_dir%/config/Noodlehaus/vankosoft/alexandra"]
+        
+    app.cassandra.repository:
+        class: VankoSoft\Alexandra\ODM\RepositoryContainer
+        arguments: ["@app.noodlehaus_config", "%kernel.project_dir%"]
+
