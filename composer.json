@@ -34,7 +34,8 @@
         "symfony/google-mailer": "^4.2",
         
         "hassankhan/config" : "~0.10",
-		"evseevnn/php-cassandra-binary" : "dev-master"
+		"evseevnn/php-cassandra-binary" : "dev-master",
+		"duoshuo/php-cassandra": "dev-master"
     },
     "require-dev": {
     	"symfony/debug-bundle": "^4.2",

@@ -5,6 +5,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use App\Entity\Cassandra\Product;
+
 class DefaultController extends Controller
 {
     /**
@@ -16,10 +18,11 @@ class DefaultController extends Controller
         $repo		= $this->container->get( 'app.cassandra.repository' )->get( 'Main::Products' );
         
         $products	= $repo->find();
+        //echo "<pre>"; var_dump($products); die;
         
-        echo "<pre>"; var_dump($products); die;
-        
-        
+        return $this->render( 'admin/VsCassandra/Product/index.html.twig', [
+            'items'  => $products
+        ]);
         //         return $this->render( 'website/pages/home.html.twig', [
         //             'categories'    => $er->findAll(),
         //             'repository'    => $er
@@ -31,6 +34,14 @@ class DefaultController extends Controller
      */
     public function createAction( Request $request )
     {
+        $product    = new Product();
         
+        $product->title = 'A Foo Bar';
+        $product->price = '19.99';
+        $product->qty   = 30;
+        
+        return $this->render( 'admin/VsCassandra/Product/create.html.twig', [
+            'message'  => 'Created product id ' . $product->productId
+        ]);
     }
 }

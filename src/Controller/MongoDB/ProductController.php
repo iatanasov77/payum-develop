@@ -19,7 +19,11 @@ class ProductController extends Controller
         $dm = $this->get( 'doctrine_mongodb.odm.default_document_manager' );
         
         $products = $dm->getRepository( Product::class )->findAll();
-        var_dump( $products ); die;
+        //var_dump( $products ); die;
+        
+        return $this->render( 'admin/MongoDB/Product/index.html.twig', [
+            'items'  => $products
+        ]);
     }
     
     /**
@@ -35,6 +39,8 @@ class ProductController extends Controller
         $dm->persist( $product );
         $dm->flush();
         
-        return new Response( 'Created product id ' . $product->getId() );
+        return $this->render( 'admin/MongoDB/Product/create.html.twig', [
+            'message'  => 'Created product id ' . $product->getId()
+        ]);
     }
 }
