@@ -97,6 +97,13 @@ vs_application:
                         route: app_cassandra_product_create
 
         mainMenu:
+            test_menu_menu_builder:
+                name: Test Menu Builder
+                uri: "%test.parameters_in_menu_builder%"
+                attributes:
+                    id: menu-test
+                    iconClass: "fas fa-project-diagram"
+                    
             external_tools:
                 name: External Tools
                 uri: "javascript:;"

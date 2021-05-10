@@ -2,15 +2,20 @@
 
 use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 use VS\ApplicationBundle\Component\Menu\MenuBuilder;
 use Knp\Menu\FactoryInterface;
 
 class Developement extends MenuBuilder
 {
-    public function __construct( string $config_file, AuthorizationChecker $security, RouterInterface $router )
-    {
-        parent::__construct( $config_file, $security, $router );
+    public function __construct(
+        string $config_file,
+        AuthorizationChecker $security,
+        RouterInterface $router,
+        ParameterBagInterface $parameterBag
+    ) {
+            parent::__construct( $config_file, $security, $router, $parameterBag );
     }
     
     public function devMenu( FactoryInterface $factory )

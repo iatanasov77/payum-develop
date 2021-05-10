@@ -19,6 +19,8 @@ parameters:
     vs_cms.page_categories.taxonomy_id: 3
     
     vs_app.settings.site_id: 1
+    
+    test.parameters_in_menu_builder: 'test_parameters_in_menu_builder'
 
 
 services:

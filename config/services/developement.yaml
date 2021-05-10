@@ -4,7 +4,7 @@ parameters:
 services:
     app.developement:
         class: App\Component\Developement
-        arguments: ["%app.config_file%", "@security.authorization_checker", "@router"]
+        arguments: ["%app.config_file%", "@security.authorization_checker", "@router", "@parameter_bag"]
         calls:
           - [ setContainer ]
 
