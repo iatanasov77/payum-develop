@@ -9,5 +9,5 @@ use VS\CmsBundle\Model\PageCategory as BasePageCategory;
  */
 class PageCategory extends BasePageCategory
 {
-    const TAXONOMY_ID = 3;
+
 }

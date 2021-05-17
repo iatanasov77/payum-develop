@@ -6,6 +6,16 @@ stof_doctrine_extensions:
             sluggable:      true
             tree:           true
             translatable:   true
+            loggable:       true
             #blameable:      false
             #uploadable:     false
+    class:
+        loggable:       VS\ApplicationBundle\EventSubscriber\LoggableListener
+#        tree:           ~
+#        timestampable:  ~
+#        blameable:      ~
+#        sluggable:      ~
+#        translatable:   ~
+#        softdeleteable: ~
+#        uploadable:     ~
  

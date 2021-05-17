@@ -16,10 +16,7 @@ security:
             # Uncomment below line when you want to deny anonymous access to /admin path
             #pattern:      ^/(?!admin)
             provider:       default_provider
-            pattern: ^/
-            #anonymous: ~
-            anonymous: lazy
-            #entry_point: form_login
+            anonymous: true
             
             remember_me:
               secret:   '%kernel.secret%'
@@ -40,6 +37,10 @@ security:
             guard:
                 authenticators:
                     - vs_users.security.login_form_authenticator
+                    - vs_users.security.token_authenticator
+                    # https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#usage
+                    #- lexik_jwt_authentication.jwt_token_authenticator
+                entry_point: vs_users.security.login_form_authenticator
 
     role_hierarchy:
         ROLE_ADMIN:       [ROLE_USER, ROLE_SPECIFIC]
@@ -54,4 +55,5 @@ security:
       - { path: ^/resetting/request, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/admin, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 

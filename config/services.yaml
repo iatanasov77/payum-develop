@@ -5,6 +5,9 @@ imports:
 parameters:
     lang: 'en'
     locale: 'en_US'
+    languages:
+        en_US: English
+        bg_BG: Български
     siteTitle: 'VS Symfony Bundles Developement'
     mailer_user: 'wct@example.com'
     debug.error_handler.throw_at: 1

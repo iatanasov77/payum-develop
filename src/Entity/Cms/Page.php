@@ -7,6 +7,7 @@ use VS\CmsBundle\Model\Page as BasePage;
 /**
  * Page
  *
+ * @Gedmo\Loggable(logEntryClass="App\Entity\LogEntry")
  * @Gedmo\TranslationEntity(class="App\Entity\Translation")
  * @ORM\Table(name="VSCMS_Pages")
  * @ORM\Entity

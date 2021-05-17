@@ -6,7 +6,8 @@ twig:
     globals:
         siteTitle: '%siteTitle%'
         lang: '%lang%'
-        #locale: '%locale%'
+        locale: '%locale%'
+        languages: '%languages%'
         installedBundles: '%kernel.bundles%'
         
     form_themes: [

@@ -18,6 +18,9 @@ vs_application:
         translation:
             classes:
                 model: App\Entity\Translation
+        logentry:
+            classes:
+                model: App\Entity\LogEntry
                 
     menu:
         devMenu:
@@ -36,6 +39,9 @@ vs_application:
                     settings_test_generalization__site_2:
                         name: Test Settings Generalization (Site 2)
                         uri: /settings/test_generalization/2
+                    page_versions_test_list:
+                        name: Test Pege Versions List
+                        route: app_test_page_versions_list
                         
             appBundle:
                 name: Symfony Application Bundle
@@ -97,13 +103,6 @@ vs_application:
                         route: app_cassandra_product_create
 
         mainMenu:
-            test_menu_menu_builder:
-                name: Test Menu Builder
-                uri: "%test.parameters_in_menu_builder%"
-                attributes:
-                    id: menu-test
-                    iconClass: "fas fa-project-diagram"
-                    
             external_tools:
                 name: External Tools
                 uri: "javascript:;"
@@ -116,7 +115,12 @@ vs_application:
                         uri: "/info.php"
                         attributes:
                             target: '_blank'
-                            
+            test_menu_menu_builder:
+                name: Test Menu Builder
+                uri: "%test.parameters_in_menu_builder%"
+                attributes:
+                    id: menu-test
+                    iconClass: icon_document_alt
             site_1:
                 name: "Site 1"
                 uri: "javascript:;"
