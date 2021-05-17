@@ -37,7 +37,7 @@ class TestPageVersionsController extends Controller
     {
         $em     = $this->getDoctrine()->getManager();
         $er     = $this->getDoctrine()->getRepository( TestPageVersion::class );
-        $erLogs = $this->getDoctrine()->getRepository( 'App\Entity\LogEntry' );
+        $erLogs = $this->get( 'vs_application.repository.logentry' );
         $page   = $er->find( $id );
         
         // lets revert to first version

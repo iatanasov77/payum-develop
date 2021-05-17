@@ -8,6 +8,9 @@ require( '../vendor/bootstrap/js/bootstrap.bundle.js' );
 require( '../vendor/slimscroll/jquery.slimscroll.js' );
 require( '../libs/js/main-js.js' );
 
+// Used to display country flags but it has many other css and js things
+require( 'mdb-ui-kit/src/scss/mdb.free.scss' );
+
 $( function()
 {
 	

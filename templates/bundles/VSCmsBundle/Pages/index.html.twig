@@ -38,6 +38,8 @@
 	                        <th width="50">N</th>
 	                        <th>Slug</th>
 	                        <th>Title</th>
+	                        <th>Locales</th>
+	                        <th>Log Versions</th>
 	                        <th width="150">Action</th>
 	                    </tr>
 	                    {% for item in items %}
@@ -56,7 +58,21 @@
 	                                    {{ item.title }}
 	                                </a>
 	                            </td>
-	
+								<td>
+									{% for locale in translations[item.id] %}
+										<i class="flag flag-{{ locale | split( '_' )[1] | lower }}"></i>
+	                                    {% if not loop.last %}&nbsp;{% endif %}
+	                                {% endfor %}
+	                            </td>
+	                            <td>
+	                            	{% if versions[item.id] is defined %}
+    	                            	{% for locale, version in versions[item.id] %}
+    	                            		<i class="flag flag-{{ locale | split( '_' )[1] | lower }}"></i>
+    	                                    ({{ version }}){% if not loop.last %}&nbsp;{% endif %}
+    	                                {% endfor %}
+    	                            {% endif %}
+	                            </td>
+	                            
 	                            <td>
 	                                <div class="btn-group">
 	                                    <div class="btn-group">
