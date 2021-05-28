@@ -22,3 +22,7 @@
 [submodule "lib/VS/Alexandra"]
 	path = lib/VS/Alexandra
 	url = https://github.com/iatanasov77/php-cassandra-entities-2.git
+[submodule "lib/VS/UsersSubscriptionsBundle"]
+	path = lib/VS/UsersSubscriptionsBundle
+	url = https://github.com/iatanasov77/vs-users-subscriptions-bundle.git
+		branch = develop
