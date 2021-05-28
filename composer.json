@@ -8,10 +8,10 @@
         "symfony/dotenv": "^4.2",
         
 		"vankosoft/application-bundle": "dev-develop",
+		"vankosoft/cms-bundle": "dev-develop",
 		"vankosoft/users-bundle": "dev-develop",
-       	"vankosoft/cms-bundle": "dev-develop",
+       	"vankosoft/users-subscriptions-bundle": "dev-develop",
        	"iatanasov77/vs-payment-bundle": "dev-develop",
-       	"iatanasov77/vs-users-subscriptions-bundle": "dev-develop",
        	
         "vasek-purchart/tracy-blue-screen-bundle": "^3.0",
         
