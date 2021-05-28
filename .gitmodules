@@ -4,9 +4,6 @@
 [submodule "lib/IA/PaymentBundle"]
 	path = lib/IA/PaymentBundle
 	url = https://github.com/iatanasov77/vs-payment-bundle.git
-[submodule "lib/IA/UsersSubscriptionsBundle"]
-	path = lib/IA/UsersSubscriptionsBundle
-	url = https://github.com/iatanasov77/vs-users-subscriptions-bundle.git
 [submodule "lib/VS/UsersBundle"]
 	path = lib/VS/UsersBundle
 	url = https://github.com/iatanasov77/vs-users-bundle
