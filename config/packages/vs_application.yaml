@@ -76,6 +76,21 @@ vs_application:
                     users:
                         name: Users
                         route: vs_users_users_index
+            usersSubscriptionsBundle:
+                name: Symfony Users Subscriptions Bundle
+                uri: "javascript:;"
+                attributes:
+                    id: usersSubscriptionsBundle
+                childs:
+                    mailchimp_audiences:
+                        name: Mailchimp Audiences
+                        route: vs_users_subscriptions_mailchimp_audiences_index
+                    mailchimp_subscribe:
+                        name: Newsletter Subscribe
+                        route: app_newsletter_mailchimp_subscribe
+                    mailchimp_unsubscribe:
+                        name: Newsletter Unsubscribe
+                        route: app_newsletter_mailchimp_unsubscribe
                         
             MongoDB:
                 name: MongoDB Examples

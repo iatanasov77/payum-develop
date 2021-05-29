@@ -15,3 +15,12 @@ vs_users:
         reset_password_request:
             classes:
                 model: App\Entity\UserManagement\ResetPasswordRequest
+                
+vs_users_subscriptions:
+    resources:
+        mailchimp_audiences:
+            classes:
+                model: App\Entity\UsersSubscriptions\MailchimpAudience
+        newsletter_subscriptions:
+            classes:
+                model: App\Entity\UsersSubscriptions\NewsletterSubscription

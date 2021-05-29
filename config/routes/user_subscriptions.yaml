@@ -1,3 +1,3 @@
-#ia_payment:
-#    resource: "@IAPaymentBundle/Resources/config/routing.yml"
-#    prefix:   /payment
+vs_users_subscriptions:
+    resource: "@VSUsersSubscriptionsBundle/Resources/config/routing/users_subscriptions.yml"
+    prefix:   /bundles/vs-users-subscriptions/

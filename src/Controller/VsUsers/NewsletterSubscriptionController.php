@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class NewsletterSubscriptionController extends Controller
 {
     /**
-     * @Route("/super_admin_only", name="app_page_super_admin_only")
+     * @Route("/newsletter/mailchimp/subscribe", name="app_newsletter_mailchimp_subscribe")
      */
     public function subscribe( Request $request ) : Response
     {
@@ -20,7 +20,7 @@ class NewsletterSubscriptionController extends Controller
     }
     
     /**
-     * @Route("/admin_only", name="app_page_admin_only")
+     * @Route("/newsletter/mailchimp/unsubscribe", name="app_newsletter_mailchimp_unsubscribe")
      */
     public function unsubscribe( Request $request ) : Response
     {
