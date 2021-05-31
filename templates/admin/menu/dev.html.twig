@@ -21,7 +21,14 @@
                             {% if( childItem.displayed ) %}
                             	<div class="row">
                             		<div class="col mb-2">
-                            			<a href="{{ childItem.uri }}" class="btn btn-primary btn-lg btn-block">{{ childItem.name }}</a>
+                            			<a href="{{ childItem.uri }}"
+                            				class="btn btn-primary btn-lg btn-block"
+                            				{% if childItem.attributes is defined and childItem.attributes.id is defined %}
+                            					id="{{ childItem.attributes.id }}"
+                            				{% endif %}
+                            			>
+                            				{{ childItem.name }}
+                            			</a>
                             		</div>
                             	</div>
                             {% endif %}

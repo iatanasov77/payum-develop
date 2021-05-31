@@ -54,6 +54,7 @@ Encore
     .addEntry('js/pages-edit', './assets/js/pages/pages-edit.js')
     .addEntry('js/pages-categories-edit', './assets/js/pages/pages-categories-edit.js')
     .addEntry('pages/pages_categories', './assets/js/pages/pages_categories.js')
+    .addEntry('pages/mailchimp_subscription', './assets/js/pages/mailchimp_subscription.js')
 ;
 
 module.exports = Encore.getWebpackConfig();

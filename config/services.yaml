@@ -24,6 +24,8 @@ parameters:
     vs_app.settings.site_id: 1
     
     test.parameters_in_menu_builder: 'test_parameters_in_menu_builder'
+    
+    mailchimp_audience_tags: ['VS_SymfonyBundlesDevelop', 'VankoSoft.Org', 'Blog.VankoSoft.Org']
 
 
 services:

@@ -9,6 +9,7 @@ twig:
         locale: '%locale%'
         languages: '%languages%'
         installedBundles: '%kernel.bundles%'
+        mailchimpAudienceTags: '%mailchimp_audience_tags%'
         
     form_themes: [
       'bootstrap_4_layout.html.twig',

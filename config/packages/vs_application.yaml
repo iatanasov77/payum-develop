@@ -86,11 +86,15 @@ vs_application:
                         name: Mailchimp Audiences
                         route: vs_users_subscriptions_mailchimp_audiences_index
                     mailchimp_subscribe:
-                        name: Newsletter Subscribe
+                        name: Test Newsletter Subscription
                         route: app_newsletter_mailchimp_subscribe
+                        attributes:
+                            id: btnMailchimpSubscribe
                     mailchimp_unsubscribe:
-                        name: Newsletter Unsubscribe
+                        name: Test Newsletter Unsubscription
                         route: app_newsletter_mailchimp_unsubscribe
+                        attributes:
+                            id: btnMailchimpUnsubscribe
                         
             MongoDB:
                 name: MongoDB Examples

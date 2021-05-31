@@ -27,3 +27,22 @@
 	    </div>
     </div>
 {% endblock %}
+
+{% block modals %}
+	{{ parent() }}
+	
+  	<!-- Mailchimp Subscription Modal-->
+	{% include 'admin/modals/mailchimp_subscription.html.twig' %}
+{% endblock %}
+
+{% block head_styles %}
+	{{ parent() }}
+	
+    {{ encore_entry_link_tags( 'pages/mailchimp_subscription' ) }}
+{% endblock %}
+        
+{% block body_scripts %}
+	{{ parent() }}
+	
+    {{ encore_entry_script_tags( 'pages/mailchimp_subscription' ) }}
+{% endblock %}
