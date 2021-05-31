@@ -1,0 +1,71 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% block content %}
+    <div class="container-fluid  dashboard-content">
+    	<!-- ============================================================== -->
+        <!-- pageheader -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">General Settings</h2>
+                    <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                    <div class="page-breadcrumb">
+                    	<nav aria-label="breadcrumb">
+                            {{ knp_menu_render('breadcrumbs', {'template': '@VSApplication/Menu/breadcrumb.html.twig'}) }}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="">
+			<div class="card bg-info text-white shadow">
+				<div class="card-body">
+				  Maintenance mode work if the environement is not 'dev' and user has not role ROLE_ADMIN.
+				  <div class="text-white-50 small">this logic implemented in class 'VS\ApplicationBundle\EventListener\MaintenanceListener::onKernelRequest'</div>
+				</div>
+			</div>
+        </div>
+                
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+        {% set siteId =  0 %}
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                	<h5 class="card-header">General Settings</h5>
+                	<div class="card-body">
+                	   {% include '@VSApplication/Settings/forms/settings.html.twig' with {'siteId': siteId} %}
+                    </div>
+                    <div class="card-footer" id="imContainer">
+                        <button type="button" class="btn btn-primary btnSaveSettings"  data-siteId="{{ siteId }}">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TEST SITE -->
+        {% for site in sites %}
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <h5 class="card-header">{{ site.title }} Settings</h5>
+                        <div class="card-body">
+                           {% include '@VSApplication/Settings/forms/settings.html.twig' with {'siteId': site.id} %}
+                        </div>
+                        <div class="card-footer" id="imContainer">
+                            <button type="button" class="btn btn-primary btnSaveSettings" data-siteId="{{ site.id }}">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div> 
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags( 'js/settings' ) }}
+{% endblock %}

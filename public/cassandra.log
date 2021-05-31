@@ -1,0 +1,2 @@
+13-05-2021 07:49:12 UTC [ERROR] Unable to establish a control connection to host ::1 because of the following error: Underlying connection error: Connect error 'connection refused' (cluster_connector.cpp:193)
+14-05-2021 13:45:11 UTC [ERROR] Unable to establish a control connection to host ::1 because of the following error: Underlying connection error: Connect error 'connection refused' (cluster_connector.cpp:193)

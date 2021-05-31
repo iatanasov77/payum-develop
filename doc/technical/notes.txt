@@ -1,0 +1,28 @@
+
+1. I should create a log file for my bundles to log errors and warnings espetialy for services
+
+2. How to disable or override sirvices:
+    https://symfony.com/doc/current/bundles/override.html#services-configuration
+    
+2. Hierarchical Roles: 
+    https://symfony.com/doc/current/security.html#hierarchical-roles
+
+3. Composer missing extensions fix in the '/vendor/composer/platform_check.php':
+    if ( ( $key = array_search( 'mongo', $missingExtensions ) ) !== false ) {
+        unset( $missingExtensions[$key] );
+    }
+    
+    
+4. GREAT DEBUGGING AND LOGING WITH: nette/tracy
+    https://tracy.nette.org/en/guide
+    https://github.com/VasekPurchart/Tracy-Blue-Screen-Bundle
+
+5. EasyUi combo-tree data example:
+    https://github.com/houyongchao/jQuery-easyui/blob/master/demo/tree_data.json
+
+6. Registering composer packages in packagist.org
+    https://bootsity.com/php/create-a-composer-package-and-list-on-packagist
+    
+7. Integration of EnlighterJS (Publishing programming code into the CMS pages)
+    https://enlighterjs.org/Documentation.html
+    

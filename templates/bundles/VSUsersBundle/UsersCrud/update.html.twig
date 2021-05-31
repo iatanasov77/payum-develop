@@ -1,0 +1,44 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% block title %}{{ parent() }} :: Create User{% endblock %}
+
+{% block pageTitle %}<i class="icon_genius"></i> Create User{% endblock %}
+
+{% block content %}
+	<div class="container-fluid  dashboard-content">
+    	<!-- ============================================================== -->
+        <!-- pageheader -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Create User</h2>
+                    <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            {{ knp_menu_render('breadcrumbs', {'template': '@VSApplication/Menu/breadcrumb.html.twig'}) }}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+        
+        
+        <div class="row">   
+            <div class="col-lg-12">
+                <section class="panel">                                          
+				    <div class="panel-body bio-graph-info">
+				    	{% if(item.id) %}{% set method = "PUT" %}{% else %}{% set method = "POST" %}{% endif %}
+				        {{ form_start(form, { 'attr': {'class': 'form-horizontal '}, 'method': method }) }}
+				            {{ form_widget(form) }}
+				             
+				        {{ form_end(form, {'render_rest': false}) }}
+				    </div>
+				</section>
+    		</div>
+    	</div>
+    </div>
+{% endblock content %}

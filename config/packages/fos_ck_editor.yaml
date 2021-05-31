@@ -1,0 +1,17 @@
+# Manuals and Tutorials
+#---------------------------
+# https://symfony.com/doc/current/bundles/FOSCKEditorBundle/usage/toolbar.html
+# https://ckeditor.com/docs/ckeditor4/latest/features/toolbar.html#toolbar-configurator
+# https://www.youtube.com/watch?v=CozCg3UNDoM
+##################################################################################
+fos_ck_editor:
+    configs:
+        document_toolbar_config:
+            toolbar: document_toolbar
+            
+    toolbars:
+        configs:
+            document_toolbar: ["@document", "/", "@links", "/", "insert"]
+        items:
+            document: ["Source", "Save", "NewPage"]
+            links: ["Link", "Unlink"]

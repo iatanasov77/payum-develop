@@ -6,8 +6,9 @@ parameters:
     env(DATABASE_URL): ''
 
 doctrine:
+    
     dbal:    
-        logging: true
+        logging: false
         driver: 'pdo_mysql'
         server_version: '5.7'
         charset: utf8mb4
@@ -29,3 +30,28 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Entity'
                 prefix: 'App\Entity'
                 alias: App
+
+            gedmo_tree:
+                type: annotation
+                prefix: Gedmo\Tree\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+                alias: GedmoTree # (optional) it will default to the name set for the mapping
+                is_bundle: false
+            translatable:
+                type: annotation
+                prefix: Gedmo\Translatable\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity/MappedSuperclass"
+                alias: GedmoTranslatable
+                is_bundle: false
+            loggable:
+                type: annotation
+                prefix: Gedmo\Loggable\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                alias: GedmoLoggable
+                is_bundle: false
+
+        resolve_target_entities:
+            VS\ApplicationBundle\Model\Interfaces\TaxonomyInterface:  App\Entity\Taxonomy\Taxonomy
+            VS\ApplicationBundle\Model\Interfaces\TaxonInterface:     App\Entity\Taxonomy\Taxon
+            VS\CmsBundle\Model\PageCategoryInterface:                 App\Entity\Cms\PageCategory
+            VS\CmsBundle\Model\PageInterface:                         App\Entity\Cms\Page

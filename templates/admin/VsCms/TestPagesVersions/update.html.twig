@@ -1,0 +1,149 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% block title %}{{ parent() }} :: Edit Page{% endblock %}
+{% block pageTitle %}<i class="icon_genius"></i> Edit Page{% endblock %}
+
+{% block content %}
+    <div class="container-fluid  dashboard-content">
+    	<!-- ============================================================== -->
+        <!-- pageheader -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <div>
+                        <h2 class="pageheader-title" style="float: left;">{% if(item.id) %}Edit:	{{ item.title }}{% else %}Create New Static Page{% endif %}</h2>
+                        <div style="float: right; margin-right: 30px;">
+                           
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                    <div class="page-breadcrumb">
+                    	<nav aria-label="breadcrumb">
+                            {{ knp_menu_render( 'breadcrumbs', {'template': '@VSApplication/Menu/breadcrumb.html.twig'} ) }}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+        
+    	<div class="row">
+            <!-- ============================================================== -->
+            <!-- basic tabs  -->
+            <!-- ============================================================== -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                	<h5 class="card-header">Page details</h5>
+                	<div class="card-body">
+						{% if form_errors(form) is not empty %}
+			                <div class="alert alert-block alert-danger fade in">
+			                    <button type="button" class="close close-sm" data-dismiss="alert">
+			                        <i class="icon-remove"></i>
+			                    </button>
+			                    <strong>Error!</strong> {{ form_errors(form) }}
+			                </div>
+			            {% endif %}
+			            
+			            {% if(item.id) %}{% set method = "PUT" %}{% else %}{% set method = "POST" %}{% endif %}
+	                	{{ form_start(form, { 'attr': {'class': 'form-horizontal '}, 'method': method }) }}
+	                        {{ form_widget(form._token) }}
+                            
+                            <label class="custom-control custom-checkbox">  
+                                <input type="checkbox" id="page_form_enabled" name="page_form[enabled]" 
+                                    class="custom-control-input form-check-input" value="{{ item.enabled }}" 
+                                />
+                                <span class="custom-control-label">Enabled</span>
+                            </label>
+                            
+                            <div class="form-group">
+                                {{ form_label(form.locale, null, {
+                                    'label_attr': {'class': 'col-form-label'}
+                                    }) 
+                                }}
+                                
+                                {{ form_widget(form.locale, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            
+                            {% if(item.id) %}
+                            	{% set taxonId = '' %}
+                            {% else %}
+                            	{% set taxonId = '' %}
+                            {% endif %}
+                            
+	                        {% set tree_data_options = "url:'" ~ path( 'vs_application_taxonomy_taxons_easyui_combotree', {'taxonomyId': taxonomyId} ) ~ "', required:true" %}
+                            <div class="form-group">
+                                {{ form_label(form.category_taxon, null, {
+                                    'label_attr': {'class': 'col-form-label'}
+                                    }) 
+                                }}
+                                {{ form_widget(form.category_taxon, {
+                                    'attr': {
+                                        'class': 'easyui-combotree',
+                                        'data-options': tree_data_options,
+                                        'data-value': taxonId
+                                    }
+                                }) }}
+                            </div>
+                            
+                            <div class="form-group">
+                                {{ form_label(form.title, null, {
+                                    'label_attr': {'class': 'col-form-label'}
+                                    }) 
+                                }}
+                                
+                                {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            
+                            <div class="row">&nbsp;</div>
+                            <div class="">
+								<div class="card bg-info text-white shadow">
+									<div class="card-body">
+									  To display FOSCKEditor run: `bin/console ckeditor:install` and `bin/console assets:install`
+									  <div class="text-white-50 small">Reference: https://symfony.com/doc/current/bundles/FOSCKEditorBundle/usage/ckeditor.html</div>
+									</div>
+								</div>
+					        </div>
+					        
+                            <div class="form-group">
+                                {{ form_label(form.text, null, {
+                                    'label_attr': {'class': 'col-form-label'}
+                                    }) 
+                                }}
+                                {{ form_widget(form.text, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            
+                            <div class="row">&nbsp;</div>
+                            <div class="input-group row">
+                                <div class="col-sm-1">
+                                    {{ form_widget(form.btnSave, {'attr': {'class': 'btn btn-primary', 'id':'btnSave'}}) }}
+                                </div>
+                                <div class="col-sm-1">
+                                    {{ form_widget(form.btnApply, {'attr': {'class': 'btn btn-primary', 'id':'btnApply'}}) }}
+                                </div>
+                                {{ form_widget(form.btnCancel, {'attr': {'class': 'btn btn-default', 'id':'btnCancel'}}) }}
+                            </div>
+	                    {{ form_end(form, {'render_rest': false}) }}
+	        		</div>
+				</div>
+			</div>
+        </div>
+    </div>   
+{% endblock content %}
+
+{% block head_styles %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/pages-edit' ) }}
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+   
+    {{ encore_entry_script_tags( 'js/pages-edit' ) }}
+{% endblock %}
+

@@ -1,0 +1,35 @@
+{
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "./node_modules/@symfony/webpack-encore/bin/encore.js dev",
+        "watch": "./node_modules/@symfony/webpack-encore/bin/encore.js dev --watch",
+        "build": "./node_modules/@symfony/webpack-encore/bin/encore.js production --progress"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.8.2",
+        "@kanety/jquery-simple-tree-table": "^0.5.0",
+        "bootstrap": "^4.3.1",
+        "bootstrap-3-typeahead": "^4.0.2",
+        "bootstrap-gtreetable": "https://github.com/iatanasov77/bootstrap-gtreetable.git",
+        "bootstrap-sass": "^3.4.1",
+        "bootstrap4-tagsinput-douglasanpa": "^4.1.2",
+        "jquery": "3.4.1",
+        "jquery-duplicate-fields": "https://github.com/iatanasov77/jquery-duplicate-fields.git",
+        "jquery-easyui": "^1.5.21",
+        "jquery-form": "^4.3.0",
+        "jquery-ui-dist": "^1.12.1",
+        "jquery.nicescroll": "^3.7.6",
+        "mdb-ui-kit": "^3.6.0",
+        "popper": "^1.0.1",
+        "popper.js": "^1.15.0"
+    },
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.28.0",
+        "core-js": "^3.0.0",
+        "node-sass": "^4.12.0",
+        "sass-loader": "^7.0.1",
+        "webpack-notifier": "^1.6.0"
+    }
+}

@@ -1,0 +1,19 @@
+I. VS_ApplicationBundle
+	
+	1. site settings
+	
+	2. taxonomies
+	
+	3. theming
+
+II. VS_UsersBundle
+	
+	1. users, roles
+		Not need groups. Use Hierarchical Roles.
+
+III. VS_CmsBundle
+	
+	1. js editor
+	
+	2. pagination
+	

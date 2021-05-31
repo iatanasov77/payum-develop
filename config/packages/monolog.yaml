@@ -1,0 +1,13 @@
+# Documentation:
+# ------------------
+# https://symfony.com/doc/current/logging.html
+# https://symfony.com/doc/current/configuration/dot-env-changes.html
+############################################################################
+monolog:
+    handlers:
+        file_log:
+            type: stream
+            # log to var/log/(environment).log
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            # log *all* messages (debug is lowest level)
+            level: debug

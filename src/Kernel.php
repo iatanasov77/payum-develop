@@ -32,12 +32,16 @@ class Kernel extends BaseKernel
 
     public function getCacheDir()
     {
-        return '/var/www/payum-develop/cache';
+        $dir    = isset( $_ENV['DIR_VAR'] ) ? $_ENV['DIR_VAR'] . '/cache' : parent::getCacheDir();
+        
+        return $dir;
     }
     
     public function getLogDir()
     {
-        return '/var/www/payum-develop/log';
+        $dir = isset( $_ENV['DIR_VAR'] ) ? $_ENV['DIR_VAR'] . '/log' : parent::getLogDir();
+        
+        return $dir;
     }
     
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void

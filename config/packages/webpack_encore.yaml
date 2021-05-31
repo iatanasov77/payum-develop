@@ -1,0 +1,6 @@
+framework:
+    assets:
+        json_manifest_path: '%kernel.project_dir%/public/assets/build/manifest.json'
+
+webpack_encore:
+    output_path: '%kernel.project_dir%/public/assets/build'

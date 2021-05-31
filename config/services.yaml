@@ -1,19 +1,34 @@
-# This file is the entry point to configure your own services.
-# Files in the packages/ subdirectory configure your dependencies.
+imports:
+    - { resource: services/developement.yaml }
+    - { resource: services/cassandra.yaml }
 
-# Put parameters here that don't need to change on each machine where the app is deployed
-# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'bg'
-    siteTitle: 'VS WebContentThief'
+    lang: 'en'
+    locale: 'en_US'
+    languages:
+        en_US: English
+        bg_BG: Български
+    siteTitle: 'VS Symfony Bundles Developement'
     mailer_user: 'wct@example.com'
-    wct_template: 'new-template'
-
-    yaml.parser.class: Symfony\Component\Yaml\Parser
-    menu.config_file: "%kernel.root_dir%/../config/packages/ia_cms.yaml"
+    debug.error_handler.throw_at: 1
+    #yaml.parser.class: Symfony\Component\Yaml\Parser
     
+    vs_app.page.tac: 'vs_app_page_tac'
+    #vs_users.login_route: 'app_login'
+    vs_users.login_by: 'username'
+    vs_users.api_token.domain: '.sbd.lh'
+    vs_users.api_token.lifetime: 3600
+    
+    vs_cms.page_categories.taxonomy_id: 3
+    
+    vs_app.settings.site_id: 1
+    
+    test.parameters_in_menu_builder: 'test_parameters_in_menu_builder'
+    
+    mailchimp_audience_tags: ['VS_SymfonyBundlesDevelop', 'VankoSoft.Org', 'Blog.VankoSoft.Org']
+
+
 services:
-   
 
     # default configuration for services in *this* file
     _defaults:
@@ -38,79 +53,23 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
         autowire: false
+        #autowire: true
+ 
+    vs_application.form.type.settings:
+        class: VS\ApplicationBundle\Form\SettingsForm
+        tags:
+            - { name: form.type }
+        arguments: ['%vs_application.model.settings.class%', $pageClass: '%vs_cms.model.pages.class%']
         
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
-    
-    app.menu_builder:
-        class: IA\CmsBundle\Component\Menu\MenuBuilder
-        arguments: ["@security.authorization_checker", "%menu.config_file%"]
-        calls:
-          - [ setContainer ]
+    ###################################
+    # GREAT DEBUGGING
+    ###################################
+    my_blue_screen:
+        class: 'Tracy\BlueScreen'
+        properties:
+            info:
+                - 'environment: %kernel.environment%'
 
-    app.main_menu:
-        autowire: false
-        class: Knp\Menu\MenuItem
-        factory: ["@app.menu_builder", mainMenu]
-        arguments: ["@knp_menu.factory"]
-        tags:
-            - { name: knp_menu.menu, alias: main }
-            
-    app.profile_menu:
-        class: Knp\Menu\MenuItem
-        factory: ["@app.menu_builder", profileMenu]
-        arguments: ["@knp_menu.factory"]
-        tags:
-            - { name: knp_menu.menu, alias: profile }
+    vasek_purchart.tracy_blue_screen.tracy.blue_screen: '@my_blue_screen'
     
-    app.breadcrumbs_menu:
-        autowire: false
-        class: Knp\Menu\MenuItem
-        factory: ["@app.menu_builder", breadcrumbsMenu]
-        arguments: ["@knp_menu.factory"]
-        tags:
-            - { name: knp_menu.menu, alias: breadcrumbs }
-              
-    # Sylius Resource Form Services
-    ia_web_content_thief.form.type.fieldsets:
-        class: App\Form\FieldsetType
-        tags:
-            - { name: form.type, alias: 'ia_web_content_thief_fieldsets' }
-        #arguments: [@doctrine]
-    ia_web_content_thief.form.type.projects:
-        class: App\Form\ProjectType
-        tags:
-            - { name: form.type, alias: 'ia_web_content_thief_projects' }
-        #arguments: [@doctrine]
-        calls:
-          #- [ setContainer,[ @service_container ] ]
-          
-        
-#    ia_web_content_thief.form.type.mappers:
-#        class: IAWebContentThiefBundle\Form\MapperType
-#        calls:
-#          - [ setContainer,[ @service_container ] ]
-#        tags:
-#            - { name: form.type, alias: 'ia_web_content_thief_mappers' }
-#        arguments: [@doctrine]
-          
-    
-    # Map Processor Forms
-    ia_web_content_thief.processor_form.prestashop15:
-        class: App\Component\MapProcessor\Form\Prestashop15Type
-    
-    # Map Processors Services
-    ia_web_content_thief.processor.prestashop15:
-        class: App\Component\MapProcessor\Processor\Prestashop15
-        #arguments: [ @service_container ]
-        calls:
-            #- [setForm, [ @ia_web_content_thief.processor_form.prestashop15 ]]
-            
-    ia_payment_builder:
-        public: true
-        autowire: true
-        class: IA\PaymentBundle\Component\Payment\PaymentBuilder
-        arguments: ["@payum"]
-        #arguments: ["@doctrine.orm.entity_manager"]
-
-        
+    #############################################################################  

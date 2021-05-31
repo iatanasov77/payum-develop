@@ -5,45 +5,34 @@
     "description": "A minimal Symfony project recommended to create bare bones applications",
     "require": {
         "php": "^7.1.3",
-        "ext-ctype": "*",
-        "ext-iconv": "*",
-        
-        "symfony/console": "^4.2",
         "symfony/dotenv": "^4.2",
-        "symfony/form": "^4.2",
-        "symfony/framework-bundle": "^4.2",
-        "symfony/orm-pack": "*",
-        "symfony/security-csrf": "^4.2",
-        "symfony/templating": "^4.2",
-        "symfony/translation": "^4.2",
-        "symfony/twig-bundle": "^4.2",
-        "symfony/validator": "^4.2",
-        "symfony/webpack-encore-bundle": "^1.6",
-        "symfony/yaml": "^4.2",
-        "symfony/process": "^4.2",
-        "symfony/property-access": "^4.2",
         
-        "twig/extensions": "^1.5",
-        "cocur/slugify": "^3.0",
-        "stof/doctrine-extensions-bundle": "^1.2",
-        "sylius/resource-bundle": "^1.5",
+		"vankosoft/application-bundle": "dev-develop",
+		"vankosoft/cms-bundle": "dev-develop",
+		"vankosoft/users-bundle": "dev-develop",
+       	"vankosoft/users-subscriptions-bundle": "dev-develop",
+       	"iatanasov77/vs-payment-bundle": "dev-develop",
+       	
+        "vasek-purchart/tracy-blue-screen-bundle": "^3.0",
         
-        "payum/payum-bundle": "^2.3",
-        "payum/offline": "^1.5",
-        "payum/paypal-express-checkout-nvp": "^1.3",
-        "payum/paypal-pro-checkout-nvp": "*",
-		"payum/stripe": "^1.5",
+        "hassankhan/config" : "~0.10",
+		"evseevnn/php-cassandra-binary" : "dev-master",
+		"duoshuo/php-cassandra": "dev-master",
 		
-		"iatanasov77/vs-users-bundle": "dev-develop",
-       	"iatanasov77/vs-cms-bundle": "dev-develop",
-       	"iatanasov77/vs-payment-bundle": "dev-develop"
+		"alcaeus/mongo-php-adapter": "^1.1",
+        "doctrine/mongodb-odm-bundle": "^3.0"
     },
     "require-dev": {
     	"symfony/debug-bundle": "^4.2",
         "symfony/maker-bundle": "^1.13",
-        "doctrine/doctrine-fixtures-bundle": "^3.3"
+        "symplify/changelog-linker": "^7.2",
+        "symfony/profiler-pack": "^1.0"
     },
 	"repositories": [
+		{
+            "type": "git",
+            "url": "https://github.com/iatanasov77/vs-application-bundle.git"
+        },
 		{
             "type": "git",
             "url": "https://github.com/iatanasov77/vs-users-bundle.git"
@@ -54,26 +43,32 @@
         },
         {
             "type": "git",
+            "url": "https://github.com/iatanasov77/vs-users-subscriptions-bundle.git"
+        },
+        {
+            "type": "git",
             "url": "https://github.com/iatanasov77/vs-payment-bundle.git"
         }
 	],
     "config": {
         "process-timeout":      600,
         "preferred-install":    "dist",
-        "github-protocols":     ["https"]
+        "github-protocols":     ["https"],
+        "discard-changes":		true,
+        "platform": {
+            "ext-mongo": "1.6.16"
+        }
     },
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "IA\\CmsBundle\\": "lib/IA/CmsBundle/",
+            "VS\\ApplicationBundle\\": "lib/VS/ApplicationBundle/lib/",
+            "VS\\CmsBundle\\": "lib/VS/CmsBundle/lib/",
+            "VS\\UsersBundle\\": "lib/VS/UsersBundle/lib/",
             "IA\\PaymentBundle\\": "lib/IA/PaymentBundle/",
-            "IA\\UsersBundle\\": "lib/IA/UsersBundle/",
-            "Payum\\Stripe\\": "lib/Payum/Stripe/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Payum\\Stripe\\": "lib/Payum/Stripe/",
+            
+            "VankoSoft\\Alexandra\\" : "lib/VS/Alexandra/"
         }
     },
     "replace": {
@@ -86,8 +81,7 @@
     },
     "scripts": {
         "auto-scripts": {
-         	"cache:clear": "symfony-cmd",
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+            
         },
         "post-install-cmd": [
             "@auto-scripts"
@@ -95,14 +89,5 @@
         "post-update-cmd": [
             "@auto-scripts"
         ]
-    },
-    "conflict": {
-        "symfony/symfony": "*"
-    },
-    "extra": {
-        "symfony": {
-            "allow-contrib": false,
-            "require": "4.2.*"
-        }
     }
 }

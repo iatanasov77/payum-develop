@@ -1,40 +1,59 @@
 security:
+    access_denied_url: /admin/login
+    
     encoders:
-        IA\UsersBundle\Entity\User:
-            algorithm: argon2i
+        App\Entity\UserManagement\User:
+            algorithm: auto
             
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        app_user_provider:
+        default_provider:
             entity:
-                #class: App\Entity\User
-                class: IA\UsersBundle\Entity\User
+                class: App\Entity\UserManagement\User
                 property: username
     firewalls:
-        api:
-            pattern: ^/api/
-            guard:
-                authenticators:
-                    - App\Security\TokenAuthenticator
         main:
+            # Uncomment below line when you want to deny anonymous access to /admin path
+            #pattern:      ^/(?!admin)
+            provider:       default_provider
             anonymous: true
+            
+            remember_me:
+              secret:   '%kernel.secret%'
+              lifetime: 604800 # 1 week in seconds
+              path:     /
+
             form_login:
-                check_path: /login_check
+                login_path: vs_application_login
+                check_path: login_check
                 username_parameter: _username
                 password_parameter: _password
                 always_use_default_target_path: false
-                default_target_path:  /projects
+                default_target_path:  /
             logout:
-                path:   /logout
-                target: /login
+                path: vs_application_logout
+                target: vs_application_login
                 invalidate_session: true
+            guard:
+                authenticators:
+                    - vs_users.security.login_form_authenticator
+                    - vs_users.security.token_authenticator
+                    # https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#usage
+                    #- lexik_jwt_authentication.jwt_token_authenticator
+                entry_point: vs_users.security.login_form_authenticator
+
+    role_hierarchy:
+        ROLE_ADMIN:       [ROLE_USER, ROLE_SPECIFIC]
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_SPECIFIC: [ROLE_SPECIFIC_1, ROLE_SPECIFIC_2]
+        
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-      - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        
       - { path: ^/resetting/send-email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/resetting/request, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/, roles: ROLE_USER }
+      - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/admin, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+

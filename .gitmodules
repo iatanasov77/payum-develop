@@ -1,12 +1,28 @@
 [submodule "lib/Payum/Stripe"]
 	path = lib/Payum/Stripe
-	url = https://github.com/iatanasov77/Stripe
+	url = https://github.com/iatanasov77/Stripe.git
 [submodule "lib/IA/PaymentBundle"]
 	path = lib/IA/PaymentBundle
-	url = https://github.com/iatanasov77/vs-payment-bundle
-[submodule "lib/IA/UsersBundle"]
-	path = lib/IA/UsersBundle
+	url = https://github.com/iatanasov77/vs-payment-bundle.git
+[submodule "lib/VS/UsersBundle"]
+	path = lib/VS/UsersBundle
 	url = https://github.com/iatanasov77/vs-users-bundle
-[submodule "lib/IA/CmsBundle"]
-	path = lib/IA/CmsBundle
-	url = https://github.com/iatanasov77/vs-cms-bundle
+		branch = develop
+[submodule "lib/VS/ApplicationBundle"]
+	path = lib/VS/ApplicationBundle
+	url = https://github.com/iatanasov77/vs-application-bundle.git
+		branch = develop
+[submodule "lib/VS/CmsBundle"]
+	path = lib/VS/CmsBundle
+	url = https://github.com/iatanasov77/vs-cms-bundle.git
+		branch = develop
+[submodule "lib/Wasinger/BundleAssetProviderBundle"]
+	path = lib/Wasinger/BundleAssetProviderBundle
+	url = https://github.com/wasinger/bundle-asset-provider-bundle.git
+[submodule "lib/VS/Alexandra"]
+	path = lib/VS/Alexandra
+	url = https://github.com/iatanasov77/php-cassandra-entities-2.git
+[submodule "lib/VS/UsersSubscriptionsBundle"]
+	path = lib/VS/UsersSubscriptionsBundle
+	url = https://github.com/iatanasov77/vs-users-subscriptions-bundle.git
+		branch = develop

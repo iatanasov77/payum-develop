@@ -1,18 +1,22 @@
-
-home:
+# Admin Panel Routes
+##########################################
+app_home:
     path: /
-    controller: App\Controller\DefaultController::index
- 
-ia_users:
-    resource: "@IAUsersBundle/Resources/config/routing/user_management.yml"
-    prefix:   /users_bundle/
- 
-ia_cms:
-    resource: "@IACmsBundle/Resources/config/routing.yml"
-    prefix:   /cms
-    
-ia_payment:
-    resource: "@IAPaymentBundle/Resources/config/routing.yml"
-    prefix:   /payment
+    controller: App\Controller\Admin\DefaultController::index
 
-    
+# Sites Routes
+##########################################
+app_site1_home:
+    path: /site_1/
+    controller: App\Controller\Site_1\DefaultController::index
+
+app_site2_home:
+    path: /site_2/
+    controller: App\Controller\Site_2\DefaultController::index
+
+# CMS TESTS
+##########################################
+app_cms_move_category:
+    path: /bundles/vs-cms/move-category/{sourceId}
+    controller: App\Controller\VsCms\PagesCategoryController::moveCategory
+

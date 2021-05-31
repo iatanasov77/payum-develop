@@ -1,0 +1,21 @@
+stof_doctrine_extensions:
+    default_locale: "%locale%"
+    orm:
+        default:
+            timestampable:  true
+            sluggable:      true
+            tree:           true
+            translatable:   true
+            loggable:       true
+            #blameable:      false
+            #uploadable:     false
+    class:
+        loggable:       VS\ApplicationBundle\EventSubscriber\LoggableListener
+#        tree:           ~
+#        timestampable:  ~
+#        blameable:      ~
+#        sluggable:      ~
+#        translatable:   ~
+#        softdeleteable: ~
+#        uploadable:     ~
+ 

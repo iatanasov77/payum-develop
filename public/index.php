@@ -1,5 +1,5 @@
 <?php
-
+ini_set('default_socket_timeout', 6000);
 use App\Kernel;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
